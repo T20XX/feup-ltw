@@ -6,6 +6,7 @@ drop table if exists restaurant;
 drop table if exists functionTime;
 drop table if exists review;
 drop table if exists reply;
+drop table if exists photo;
 
 
 CREATE TABLE account (
@@ -18,7 +19,7 @@ CREATE TABLE account (
 
 CREATE TABLE restaurant (
 	id_restaurant INTEGER PRIMARY KEY AUTOINCREMENT,
-	id_owner INTEGER REFERENCES account(id_account)
+	id_owner INTEGER REFERENCES account(id_account),
 	id_functionTime INTEGER REFERENCES functionTime(id_functionTime),
 	name VARCHAR NOT NULL,
 	address VARCHAR NOT NULL,
@@ -51,11 +52,11 @@ CREATE TABLE review (
 
 CREATE TABLE reply (
 	id_reply INTEGER PRIMARY KEY AUTOINCREMENT,
-	id_review INTEGER REFERENCES review(id_review)
-	comment VARCHAR NOT NULL,	
+	id_review INTEGER REFERENCES review(id_review),
+	comment VARCHAR NOT NULL	
 );
 	
-	CREATE TABLE photo (
+CREATE TABLE photo (
 	id_photo INTEGER PRIMARY KEY AUTOINCREMENT,
 	id_restaurant INTEGER REFERENCES restaurant(id_restaurant),
 	path VARCHAR NOT NULL
