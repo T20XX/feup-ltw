@@ -7,6 +7,8 @@ drop table if exists FunctionTime;
 drop table if exists Review;
 drop table if exists Reply;
 drop table if exists Photo;
+drop table if exists Type;
+drop table if exists Category;
 
 
 CREATE TABLE Account (
