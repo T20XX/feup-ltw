@@ -7,8 +7,8 @@ drop table if exists FunctionTime;
 drop table if exists Review;
 drop table if exists Reply;
 drop table if exists Photo;
-drop table if exists Type;
 drop table if exists Category;
+drop table if exists RestaurantFood;
 
 
 CREATE TABLE Account (
@@ -64,15 +64,15 @@ CREATE TABLE Photo (
 	path VARCHAR NOT NULL
 );
 
-CREATE TABLE Type {
-id_restaurant INTEGER PRIMARY KEY Restaurant(id_restaurant),
-id_category VARCHAR PRIMARY KEY Category(id_category)
-}
+CREATE TABLE Category (
+	id_category VARCHAR PRIMARY KEY
+);
 
-CREATE TABLE Category {
-id_category VARCHAR PRIMARY KEY
-}
-
+CREATE TABLE RestaurantFood (
+	id_restaurant_food INTEGER PRIMARY KEY,
+	id_restaurant INTEGER REFERENCES Restaurant(id_restaurant),
+	id_category INTEGER REFERENCES Category(id_category)
+);
 
 INSERT INTO Category VALUES ('Chinese');
 INSERT INTO Category VALUES ('Sushi');
