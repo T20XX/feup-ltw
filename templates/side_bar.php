@@ -2,7 +2,7 @@
 				<!-- search -->
 				<div id = "categories">
 					<h4> Categories </h4>
-					
+					<ul>
 					<?php
 					include_once getcwd() . "/database/connection.php";
 					$stmt = $db->prepare('SELECT * FROM Category');
@@ -10,10 +10,10 @@
 					$result = $stmt->fetchAll();
 					
 					foreach( $result as $row) {
-						echo '<a class="category" href="">' . $row['id_category'] . '</a>';
+						echo '<li><a class="category" href="">' . $row['id_category'] . '</a></li>';
 					 }
 					?>
-					
+					</ul>
 				</div>
 				<div id = "top_10">
 					<h4> Top 10 </h4>

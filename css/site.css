@@ -3,22 +3,26 @@ html {
 }
 
 body {
-  width: 1000px;
-  margin: 0px auto;
-  font-family: times, serif;
-  display : block;
-}
-
-#header,#feed, #side_bar,#feed, #footer{
-	border-radius: 20px;
-	padding: 1% 1%;
+	width: 1000px;
+	margin: 0px auto;
+	font-family: times, serif;
+	display : block;
 }
 
 #header {
   background-color: #000000;
   color: #ffffff;
   text-align: center;
+  position:fixed;
+  width:1000px;
+  padding-bottom: 5px;
+  border-radius: 20px;
 }
+
+#header h1{
+	font-size: 30px;
+}
+
 
 #menu li{
   display: inline;
@@ -27,6 +31,16 @@ body {
   border-right: 1px solid #ffffff;
   padding-right: 10px;
   margin-right: 0px;
+  font-size: 18px;
+}
+#menu li:last-child{
+  border-right: none;
+}
+
+#feed, #side_bar,#feed, #footer{
+	margin-top: 125px;
+	border-radius: 20px;
+	padding: 1% 1%;
 }
 
 #feed, #side_bar{

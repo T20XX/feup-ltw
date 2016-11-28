@@ -1,0 +1,42 @@
+.session{
+	position: fixed;
+	background-color: #000000;
+	color: #ff0000;
+	border-style: none;
+	top:10px;
+	left:50%;
+}
+
+#loginform{
+	display: none;
+	position: fixed;
+	top: 35%;
+	left:50%;
+	width:200px;
+	margin-left: -130px;
+	background-color: #ff0000;
+	padding:30px;
+}
+#login_button {
+	position: relative;
+	width: 30%;
+	margin-top: 10%
+}
+
+#loginform .insert_info{
+	position: relative;
+	margin-bottom:5%;
+	
+}
+
+#do_login{
+	margin-left: 450px;
+}
+
+#do_logout{
+	margin-left: 400px;
+}
+
+#do_signup{
+	margin-left: 350px;
+}
