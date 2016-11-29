@@ -10,10 +10,10 @@ body {
 }
 
 #header {
+	display: inline-block;
   background-color: #000000;
   color: #ffffff;
   text-align: center;
-  position:fixed;
   width:1000px;
   padding-bottom: 5px;
   border-radius: 20px;
@@ -38,7 +38,7 @@ body {
 }
 
 #feed, #side_bar,#feed, #footer{
-	margin-top: 125px;
+	margin-top: 5px;
 	border-radius: 20px;
 	padding: 1% 1%;
 }
@@ -48,18 +48,19 @@ body {
   background-color: #ff0000;
   color: #ffffff;
   padding: 0%;
-  float: left;
 }
 
 #feed{
 	width:80%;
 	overflow: auto;
+  float: left;
 }
 
 #side_bar {
 	background-color : #00ff00;
 	width:19%;
 	margin-left:1%;
+  float: right;
 }
 
 #feed div, #side_bar div{

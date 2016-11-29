@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="css/session.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="js/loginform.js"></script>
+		<script src="js/logout.js"></script>
+		<script src="js/signup.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -17,7 +19,7 @@
 				<div id="guest">
 					<div id="login">
 						<input id="do_login" class="session" type="submit" name="Login" value="Login">
-						<form id="loginform" method="post" action="index.php">
+						<form id="loginform" method="post" action="action_login.php">
 						  <label for="username">Username</label>
 						  <input class="insert_info" type="text" name="username" required="required">
 						  <label for="password">Password</label>
