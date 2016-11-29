@@ -1,5 +1,5 @@
 $( function() {
 	$("#do_signup").click(function() {
-		window.location = "signup.php"
+		window.location = "signup.php";
 	});
 } );

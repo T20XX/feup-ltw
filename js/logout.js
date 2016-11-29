@@ -1,7 +1,6 @@
 $( function() {
 	$("#do_logout").click(function() {
-		window.alert("destroying session");
-		$.get("session_destroy.php");
-		window.alert("session destroyed");
+		$.ajax({ url: 'http://localhost/ltw/action_logout.php' });
+		location.reload();
 	});
 } );

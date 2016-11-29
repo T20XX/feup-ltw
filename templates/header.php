@@ -15,7 +15,8 @@
 			<h1> Site Teste</h1>
 		
 			<div id="session">
-			
+			<?php
+					if (!isset($_SESSION['id_account'])){ ?>
 				<div id="guest">
 					<div id="login">
 						<input id="do_login" class="session" type="submit" name="Login" value="Login">
@@ -31,10 +32,14 @@
 						<input id="do_signup" class="session" type="submit" name="SignUp" value="SignUp">
 					</div>
 				</div>
-				
+					<?php }else{ 
+				echo $_SESSION['id_account'] . '<br>';
+				echo $_SESSION['name'] . '<br>';
+				echo $_SESSION['type'] . '<br>';?>
 				<div id="account">
 					<input id="do_logout" class="session" type="submit" name="Logout" value="Logout">
 				</div>
+					<?php } ?>
 				
 			</div>
 			
@@ -44,7 +49,11 @@
 					<li><a href=""> Restaurants </a> </li>
 					<li><a href=""> Advanced Search </a> </li>
 					<li><a href=""> Information </a></li>
-					<li><a class="account" href=""> Account </a></li>
+					<?php
+					if (isset($_SESSION['id_account'])){
+					echo '<li><a class="account" href=""> Account </a></li>';
+					}
+					?>
 				</ul>
 			</div>
 		</div>
