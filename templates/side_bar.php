@@ -20,4 +20,4 @@
 					<!-- javascript para fazer o display do top 10 restaurantes em que cada um é seleccionavel -->
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
