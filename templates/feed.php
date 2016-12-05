@@ -8,7 +8,7 @@
 					$result = $stmt->fetchAll();
 					
 					foreach( $result as $row) {
-						echo '<li><a class="feed" href="">' . $row['name']  .  '</a></li>';
+						echo '<li><a class="feed" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a></li>';
 					 }
 				?>
 			</ul>
