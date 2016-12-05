@@ -5,9 +5,7 @@
 		<link rel="stylesheet" href="css/site.css">
 		<link rel="stylesheet" href="css/session.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="js/loginform.js"></script>
-		<script src="js/logout.js"></script>
-		<script src="js/signup.js"></script>
+		<script src="js/header.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -33,8 +31,7 @@
 					</div>
 				</div>
 					<?php }else{ 
-				echo $_SESSION['id_account'] . '<br>';
-				echo $_SESSION['name'] . '<br>';
+				echo '<a class="account">' . $_SESSION['name'] . ' (' . '<a id="username" class="account">' .$_SESSION['id_account'] . '</a>' . ') </a> <br>';
 				echo $_SESSION['type'] . '<br>';?>
 				<div id="account">
 					<input id="do_logout" class="session" type="submit" name="Logout" value="Logout">
@@ -51,7 +48,7 @@
 					<li><a href=""> Information </a></li>
 					<?php
 					if (isset($_SESSION['id_account'])){
-					echo '<li><a class="account" href=""> Account </a></li>';
+					echo '<li><a class="account"> Account </a></li>';
 					}
 					?>
 				</ul>
