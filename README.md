@@ -2,12 +2,23 @@
 
 ## Falta Fazer
 
-### Geral
+#### Geral
+- form para criar novo restaurante
+- pagina information e footer
+- pesquisa avançada
+- comentários e deixar review
+- pagina de restaurante 
 
 #### Side Bar
-- Meter as categorias uma em cada linha
-- implementar Search geral
 - Top 10 restaurantes
 
-### Login
-- JavaScrip para fazer login apartir da mesma página
+#### Logout
+- página não atualiza automaticamente embora destrua as variaveis da sessão
+
+---
+
+## Implementado
+- Login, logout e signup
+- pequisa por categoria a partir da sidebar
+- informações da conta ao carregar ou em account ou no nome do utilizador
+- opção para criar novo restaurante se for owner
