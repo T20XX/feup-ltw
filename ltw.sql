@@ -88,10 +88,17 @@ INSERT INTO Category VALUES ('Coffee Shop');
 INSERT INTO Category VALUES ('Pastry Shop');
 INSERT INTO Category VALUES ('Sea Food');
 
+
 INSERT INTO Account VALUES ('mario','Mario Fernandes','123','owner');
+INSERT INTO Account VALUES ('catarina','Catarina Ramos','123','owner');
+INSERT INTO Account VALUES ('telmo','Telmo Barros','123','owner');
 
 INSERT INTO FunctionTime VALUES (1,'12:00','15:00',1,1,1,1,1,1,1);
 
 INSERT INTO Restaurant VALUES (1,'mario',1,'Sushi','Sakurai Sushi Bar','testaddress','testdescription',5);
-INSERT INTO Restaurant VALUES (2,'mario',1,'Sushi','McDonalds','testaddress','testdescription',5);
+INSERT INTO Restaurant VALUES (2,'mario',1,'Fast Food','McDonalds','testaddress','testdescription',5);
+INSERT INTO Restaurant VALUES (3,'mario',1,'Fast Food','Pizza Hut','testaddress','testdescription',5);
+INSERT INTO Restaurant VALUES (4,'mario',1,'Portuguese','Abadia','testaddress','testdescription',5);
+INSERT INTO Restaurant VALUES (5,'mario',1,'Sea Food','O Xarroco','testaddress','testdescription',5);
+
 
