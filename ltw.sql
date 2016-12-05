@@ -23,6 +23,7 @@ CREATE TABLE Restaurant (
 	id_restaurant INTEGER PRIMARY KEY AUTOINCREMENT,
 	id_owner INTEGER REFERENCES Account(id_account),
 	id_functionTime INTEGER REFERENCES FunctionTime(id_functionTime),
+	id_category VARCHAR REFERENCES Category(id_category),
 	name VARCHAR NOT NULL,
 	address VARCHAR NOT NULL,
 	description VARCHAR,
@@ -86,4 +87,11 @@ INSERT INTO Category VALUES ('Brazilian');
 INSERT INTO Category VALUES ('Coffee Shop');
 INSERT INTO Category VALUES ('Pastry Shop');
 INSERT INTO Category VALUES ('Sea Food');
+
+INSERT INTO Account VALUES ('mario','Mario Fernandes','123','owner');
+
+INSERT INTO FunctionTime VALUES (1,'12:00','15:00',1,1,1,1,1,1,1);
+
+INSERT INTO Restaurant VALUES (1,'mario',1,'Sushi','Sakurai Sushi Bar','testaddress','testdescription',5);
+INSERT INTO Restaurant VALUES (2,'mario',1,'Sushi','McDonalds','testaddress','testdescription',5);
 

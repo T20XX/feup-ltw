@@ -10,7 +10,7 @@
 					$result = $stmt->fetchAll();
 					
 					foreach( $result as $row) {
-						echo '<li><a class="category" href="">' . $row['id_category'] . '</a></li>';
+						echo '<li><a class="category" href="categoria.php?categoria=<?php echo $row[id_category] ?>">' . $row['id_category'] . '</a></li>';
 					 }
 					?>
 					</ul>
