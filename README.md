@@ -12,8 +12,8 @@
 - comentários, classificar e deixar review
 - se pertencer a owner, posso editar
 
-#### Advanced Search -> Catarina
-- todo
+#### Advanced Search
+- fazer o action_advanced_search que pega na informação apartir do Advanced Search e faz uma pesquisa com toda aquela informação. Campos que não foram preenchidos significa que a pesquisa para aquele tipo de campo é indiferente.
 
 #### Information
 - todo
