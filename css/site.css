@@ -88,8 +88,9 @@ body {
 }
 
 #loginform{
+	background: url(images/wood.jpg);
+	background-size: 300px;
 	border: 20px solid rgba(0, 0, 0, 0.2);
-	background: #eeeeee;
 	background-clip: padding-box;  
 	display: none;
 	position: fixed;
@@ -97,7 +98,7 @@ body {
 	left:50%;
 	width:200px;
 	margin-left: -160px;
-	color: #000000;
+	color: #ffffff;
 	padding:40px;
 	border-radius: 30px;
 }

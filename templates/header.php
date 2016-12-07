@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>TESTE SITE</title>
+		<title>Table for Two</title>
 		<link rel="stylesheet" href="css/site.css">
 		<link rel="stylesheet" href="css/session.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -10,7 +10,7 @@
 	<body>
 		<div id="header">
 			
-			<h1> Site Teste</h1>
+			<h1> Table for Two </h1>
 			
 			<!-- Fazer div para search com label e botão -->
 			
