@@ -45,7 +45,7 @@ body {
 
 
 #content/*, #side_bar*/{
-  display: block;
+  display: none;
   background-color: rgba(0,0,0,0.5);
   color: #ffffff;
   padding: 1%;

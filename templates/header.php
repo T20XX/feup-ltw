@@ -14,7 +14,7 @@
 		
 			<div id="menu">
 				<ul>
-					<li><a href="index.php"> Home </a></li> 
+					<li><a id="go_home"> Home </a></li> 
 					<li><a > Restaurants </a> </li>
 					<li><a > Advanced Search </a> </li>
 					<li><a > Information </a></li>
