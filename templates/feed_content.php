@@ -2,9 +2,8 @@
 	<ul>
 		<?php
 			include_once getcwd() . "/database/connection.php";
-			$stmt = $db->prepare('SELECT * FROM Restaurant');
-			$stmt->execute();
-			$result = $stmt->fetchAll();
+			include_once getcwd() . "/database/restaurant.php";
+			$result = getAllRestaurant($db);
 			
 			foreach( $result as $row) {
 				echo '<li><a class="feed" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a></li>';

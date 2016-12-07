@@ -72,7 +72,7 @@ CREATE TABLE Category (
 CREATE TABLE RestaurantFood (
 	id_restaurant_food INTEGER PRIMARY KEY,
 	id_restaurant INTEGER REFERENCES Restaurant(id_restaurant),
-	id_category INTEGER REFERENCES Category(id_category)
+	id_category VARCHAR REFERENCES Category(id_category)
 );
 
 INSERT INTO Category VALUES ('Chinese');

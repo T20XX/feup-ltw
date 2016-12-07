@@ -1,6 +1,6 @@
 
 	<div id="content">
-		<div id="signup">
+		<div>
 			<form action="action_signup.php" method="post">
 				<p><label>Username: 
 					<input type="text" name="username" required="required">
