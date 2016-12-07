@@ -4,18 +4,35 @@
 
 #### Geral
 - form para criar novo restaurante
-- pagina information e footer
-- pesquisa avançada
-- comentários e deixar review
-- pagina de restaurante 
+- search bar 
+- botão fixed no canto inferior direito para redirecionar para o topo da página
+- Se for Owner aparece no menu uma opção para "Os meus restaurantes"
 
-#### Side Bar
-- Top 10 restaurantes
+##### Restaurant (1 só)
+- comentários, classificar e deixar review
+- se pertencer a owner, posso editar
+
+#### Advanced Search -> Catarina
+- todo
+
+#### Information
+- todo
+
+#### Account (Nome)
+- Informação sobre o perfil
+- Alterar perfil
+
+##### Owner
+- Criar/Remover Restaurante
+
+#### Reviewer
+- Os meus restaurantes preferidos
+
+#### Restaurants
+- Lista com o nome de todos os restaurantes por ordem alfabética e href para o restaurante específico
 
 #### Logout
 - página não atualiza automaticamente embora destrua as variaveis da sessão
-
----
 
 ## Implementado
 - Login, logout e signup
