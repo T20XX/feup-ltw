@@ -9,9 +9,11 @@
 	</head>
 	<body>
 		<div id="header">
-		
+			
 			<h1> Site Teste</h1>
-		
+			
+			<!-- Fazer div para search com label e botão -->
+			
 			<div id="menu">
 				<ul>
 					<li><a id="go_home"> Home </a></li> 

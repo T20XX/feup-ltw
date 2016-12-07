@@ -16,8 +16,14 @@ $(function() {
 
 $(function() {
     $("#do_login").click(function() {
-        $("#loginform").slideDown(1000).fadeIn(1000);
-        $("#loginform <").css("display", "block");
+        if($("#loginform").css("display") == "none") { 
+			$("#loginform").slideDown(1000).fadeIn(1000);
+			$("#loginform <").css("display", "block");
+		}
+		else{
+			$("#loginform").slideUp(1000).fadeOut(1000);
+			$("#loginform <").css("display", "none");
+		}
     });
 });
 
