@@ -1,77 +1,108 @@
-html {
-  background-color: #ddddff;
+html{
+	position:relative;
 }
-
 body {
-	width: 1000px;
-	margin: 0px auto;
+	background-image: url(images/background.jpg);
+	background-position: 0%;
+	background-size: 100%;
+	background-attachment: fixed;
 	font-family: times, serif;
+	margin: 0px auto;
 	display : block;
 }
 
 #header {
 	display: inline-block;
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
-  width:1000px;
-  padding-bottom: 5px;
-  border-radius: 20px;
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+	width:100%;
+	padding-bottom: 5px;
 }
 
 #header h1{
 	font-size: 30px;
 }
 
-
 #menu li{
   display: inline;
+  text-decoration: none;
   margin: 10px;
   display: inline;
   border-right: 1px solid #ffffff;
   padding-right: 10px;
   margin-right: 0px;
   font-size: 18px;
+  color: #ffffff;
 }
 #menu li:last-child{
   border-right: none;
 }
-
-#feed, #side_bar,#feed, #footer{
-	margin-top: 5px;
-	border-radius: 20px;
-	padding: 1% 1%;
+#content{
+	width: 1000px;
+	margin: 0px auto;
 }
 
-#feed, #side_bar{
-  display: inline-block;
-  background-color: #ff0000;
+
+#content/*, #side_bar*/{
+  display: block;
+  background-color: rgba(0,0,0,0.5);
   color: #ffffff;
-  padding: 0%;
+  padding: 1%;
+  margin-bottom: 100px;
 }
 
-#feed{
+/*#content{
 	width:80%;
 	overflow: auto;
   float: left;
-}
+}*/
 
-#side_bar {
+#side_bar {							/*Não é para aparecer a side_bar*/
 	background-color : #00ff00;
 	width:19%;
 	margin-left:1%;
-  float: right;
+	/*float: right;*/
+	display: none;
+	
 }
 
-#feed div, #side_bar div{
+#content div/*, #side_bar div*/{
 	display:block;
 	margin:20px;
-	background-color: #ffffff;
-	color : #000000;
+	
 }
 
 
 #footer {
-	background-color : #0000ff;
-	clear: both;
+	text-align: center;
+	color: #ffffff;
+	font-size: 12px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000000;
+	/*clear: both;*/
+	padding: 7px;
+}
+
+#loginform{
+	border: 20px solid rgba(0, 0, 0, 0.2);
+	background: #eeeeee;
+	background-clip: padding-box;  
+	display: none;
+	position: fixed;
+	top: 32%;
+	left:50%;
+	width:200px;
+	margin-left: -160px;
+	color: #000000;
+	padding:40px;
+	border-radius: 30px;
+}
+
+#item {
+	border-style: outset;
+	padding : 4%;
 }
