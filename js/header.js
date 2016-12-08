@@ -56,11 +56,10 @@ $(function() {
 
 $(function() {
     $("#do_logout").click(function() {
+    	$.get( "action_logout.php");
 		$("#content").slideUp(1000).fadeOut(1000);
 		$("#content").promise().done(function(){		/*waits for animation to end*/
 			window.location = "logout.php";
-        //$.ajax({ url: 'http://localhost/ltw/action_logout.php' });
-        //window.location.reload();
 		});
     });
 });
