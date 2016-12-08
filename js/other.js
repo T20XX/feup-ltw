@@ -23,3 +23,12 @@ $(function() {
 		});
     });
 });
+
+$(function() {
+    $("#button_add_restaurant").click(function() {
+		$("#content").slideUp(1000).fadeOut(1000);
+        $("#content").promise().done(function(){		/*waits for animation to end*/
+			window.location = "add_restaurant.php";
+		});
+    });
+});
