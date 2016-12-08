@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="css/site.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="js/header.js"></script>
-		<script src="js/search.js"></script>
+		<script src="js/other.js"></script>
 		
 	</head>
 	<body>
@@ -18,14 +18,14 @@
 			<div id="menu">
 				<ul>
 					<li><a id="go_home" class="header_button"> Home </a></li> 
-					<li><a class="header_button"> Restaurants </a> </li>
+					<li><a id="go_restaurants" class="header_button"> Restaurants </a> </li>
 					<li><a id="go_advanced_search" class="header_button"> Advanced Search </a> </li>
-					<li><a class="header_button"> Information </a></li>
+					<li><a id="go_information" class="header_button"> Information </a></li>
 					<?php
 					if (isset($_SESSION['id_account'])){
 						if($_SESSION['type'] == 'owner')
 								echo '<li><a id="go_my_restaurants" class="header_button"> My Restaurants </a></li>';
-						echo '<li><a >' . $_SESSION['name'] .'</a></li>';
+						echo '<li><a id="go_my_account" class="header_button">' . $_SESSION['name'] .'</a></li>';
 						echo '<li><a id="do_logout" class="header_button"> Logout </a></li>';
 					}
 					else{

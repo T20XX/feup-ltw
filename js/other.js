@@ -14,3 +14,12 @@ $(function() {
 		});
 	});
 });
+
+$(function() {
+    $("#button_edit_account").click(function() {
+		$("#content").slideUp(1000).fadeOut(1000);
+        $("#content").promise().done(function(){		/*waits for animation to end*/
+			window.location = "edit_account.php";
+		});
+    });
+});
