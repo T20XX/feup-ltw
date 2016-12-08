@@ -1,5 +1,7 @@
 # LTW1
-
+## Contas
+- username: Owner password: 12345 type: owner
+- username: Teste password: 12345 type: reviewer
 ## Falta Fazer
 
 #### Geral
