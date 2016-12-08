@@ -1,28 +1,22 @@
-<div id="content">
-		<h1 class="title"> Advanced Search </h1>
+	<div id="content">
+		<h1> Create Restaurant </h1>
 		<div>
-			<form class="big_form" action="action_search_restaurant.php" method="post">
+			<form action="action_add_restaurant.php" class="big_form" method="post">
 				<fieldset>
-					<legend> General Information </legend>
-					<p><label>Restaurant Name: 
-						<input type="text" class="max_width" name="restaurant_name" value="">
+					<legend>Opening Hours</legend>
+					<p><label>Name: 
+						<input type="text" class="max_width" name="name" required="required">
 					</label></p>
-					<p><label>Owner Name: 
-						<input type="text" class="max_width" name="owner_name" value="">
-					<p><label></p>
 					<p><label>Address: 
-						<input type="text" class="max_width" name="address_name" value="">
-					<p><label></p>
-					<p><label>Stars (Minimum) : 0
-						<input type="range" value="0" min="0" max="5" step="1"> 5
+						<input type="text" class="max_width" name="address" required="required">
 					</label></p>
+					<p><label>Description:</label></p>
+					<textarea type="text" class="max_width" name="description" required="required"></textarea>
 				</fieldset>
 
 				<fieldset>
-				
-					<legend> Function Time </legend>
+					<legend>Opening Hours</legend>
 					Hours: <input type="time" value='00:00'> - <input type="time" value = '23:59'><br><br>
-					
 					<ul class="simple_list">					
 						<li><input class="select_all" type="checkbox" checked="checked" data-group=".group1" value="all_checked">All Checked<br><br></li>
 						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="monday">Monday</li>
@@ -34,7 +28,6 @@
 						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="sunday">Sunday</li>
 					</ul>
 				</fieldset>
-				
 				<fieldset>
 					<legend> Categories </legend>
 					
@@ -52,10 +45,9 @@
 					 }
 					?>
 					</ul>
+					<button class="button_1"> Add Category </button>
 				</fieldset>
-				
-				<button class="button_1" type="submit"> Search Restaurant </button>
-				
+				<button type="submit" class="button_1"> Create restaurant </button>
 			</form>
 		</div>
-</div>
+	</div>

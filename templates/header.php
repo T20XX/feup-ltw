@@ -13,7 +13,10 @@
 			
 			<h1> Table for Two </h1>
 			
-			<!-- Fazer div para search com label e botão -->
+			<div id="search_bar">
+				<input type="text" name="search">
+				<button type="submit"\>
+			</div>
 			
 			<div id="menu">
 				<ul>

@@ -87,6 +87,21 @@ body {
 	padding: 7px;
 }
 
+#search_bar{
+	display: block;
+	position: fixed;
+	left: 80%;
+	top: 0px;
+}
+
+#search_bar button{
+	background-image: url(images/search.png);
+	background-size: 21px;
+	width: 21px;
+	height: 21px;
+	float: right
+}
+
 #loginform{
 	background: url(images/wood.jpg);
 	background-size: 300px;
@@ -115,9 +130,17 @@ fieldset >*{
 	margin: 5px;
 }
 
-#item {
+.item {
 	border-style: outset;
 	padding : 4%;
+}
+
+.max_width{
+	width: 100%;
+}
+
+.title{
+	text-align: center;
 }
 
 .simple_list{

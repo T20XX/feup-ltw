@@ -24,6 +24,15 @@ $(function() {
 });
 
 $(function() {
+    $("#go_my_restaurants").click(function() {
+		$("#content").slideUp(1000).fadeOut(1000);
+        $("#content").promise().done(function(){		/*waits for animation to end*/
+			window.location = "my_restaurants.php";
+		});
+    });
+});
+
+$(function() {
     $("#go_my_account").click(function() {
 		$("#content").slideUp(1000).fadeOut(1000);
         $("#content").promise().done(function(){		/*waits for animation to end*/
