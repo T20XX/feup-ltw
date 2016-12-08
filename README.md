@@ -18,7 +18,7 @@
 - fazer o action_advanced_search que pega na informação apartir do Advanced Search e faz uma pesquisa com toda aquela informação. Campos que não foram preenchidos significa que a pesquisa para aquele tipo de campo é indiferente.
 
 #### Information
-- todo
+- css
 
 #### Account (Nome)
 - action_edit_account (Pega na informação do edit_account_form)
