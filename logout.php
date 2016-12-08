@@ -6,6 +6,5 @@
 		<p> Logout successfully!</p>
 	</div>
 	<?php
-	include ('templates/side_bar.php');
 	include ('templates/footer.php');
 ?>

@@ -10,11 +10,11 @@
 					<input type="password" name="password" required="required">
 				</label></p>
 				<p><label>Age: 
-					<input type="number" name="age" value="25" min="18" max="90" step="1">
+					<input type="number" name="age" value=25 min=18 max=90 step=1>
 				</label></p>
 				<div>
-					<input type="radio" name="gender" value="1" checked="checked">Male
-					<input type="radio" name="gender" value="2">Female
+					<input type="radio" name="gender" value=1 checked="checked">Male
+					<input type="radio" name="gender" value=2>Female
 				</div>
 				<div>
 					<input type="radio" name="type" value="reviewer" checked="checked">Reviewer
