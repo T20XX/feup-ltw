@@ -1,11 +1,12 @@
 # LTW1
+
 ## Contas
 - username: Owner password: 12345 type: owner
 - username: Teste password: 12345 type: reviewer
+
 ## Falta Fazer
 
 #### Geral
-- form para criar novo restaurante
 - search bar 
 - botão fixed no canto inferior direito para redirecionar para o topo da página
 
@@ -27,7 +28,8 @@
 - Introduzi na base de dados o gender e age mas acho que não está a meter bem os dados. Se for homem o valor = 1 se for mulher = 2 mas ele mete o valor sempre a 0. O problema pode ser na forma como o valor é passado.
 
 ##### Owner
-- Criar/Remover Restaurante
+- action_add_restaurant
+- action_remove_restaurant
 
 #### Reviewer
 - Os meus restaurantes preferidos
@@ -41,3 +43,4 @@
 ## Implementado
 - Login, logout e signup
 - opção para criar novo restaurante se for owner
+- Forms para criar/edita conta, criar restaurante, advance_search
