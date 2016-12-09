@@ -1,8 +1,18 @@
-<?php
-	include ('templates/session_start.php');
-    include ('templates/header.php');    
+<?php  
 	include_once('database/connection.php');
 	include_once('database/account.php');
+	include('templates/session_start.php');
+	$id_account=$_SESSION['id_account'];
+	editAccount($db,$_SESSION['id_account'],$_POST['name'],$_POST['password'],$_POST['age'],$_POST['gender']);
+	$result=	getAccountItem($db, $_SESSION['id_account']);
+	session_destroy();
+	session_start();
+		$_SESSION['id_account'] = $result['id_account'];
+		$_SESSION['name'] = $result['name'];
+		$_SESSION['type'] = $result['type'];
+		$_SESSION['age'] = $result['age'];
+		$_SESSION['gender'] = $result['gender'];
+    include ('templates/header.php');  
 
 ?>
 	<div id="content">
@@ -11,8 +21,8 @@
 		Alterar conta na base de dados
 		Se o username, name ou pass forem = "" então não serão alterados
 	*/
-	editAccount($db,$_SESSION['id_account'],$_POST['name'],$_POST['password'],$_POST['age'],$_POST['gender']);
-	echo 'Sucessfull account edit!';
+	echo 'Account succesfully edited!';
+		
 ?>
 	</div>
 <?php
