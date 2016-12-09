@@ -5,6 +5,13 @@
 		$result = $stmt->fetchAll();
 		return $result;
 	}
+
+	function getAllRestaurantsFromOwner($db, $owner){
+		$stmt = $db->prepare('SELECT * FROM Restaurant WHERE id_owner = ?');
+		$stmt->execute(array($owner));
+		$result = $stmt->fetchAll();
+		return $result;
+	}
 	
 	function getRestaurantItem($db, $id){
 		$stmt = $db->prepare('SELECT * FROM Restaurant WHERE id_restaurant = ?');
@@ -13,11 +20,9 @@
 		return $result;
 	}
 
-	function addRestaurant($db, $id){
-		$stmt = $db->prepare('INSERT INTO FunctionTime (id_functionTime ,open_time,	close_time,	monday,	tuesday, wednesday,	thursday, friday, saturday,	sunday) VALUES (?,?,?,?,?,?,?,?,?,?)');
-
-		$stmt = $db->prepare('INSERT INTO Account (id_account, name, pass, type) VALUES (?,?,?,?)');
-		$stmt->execute(array($_POST['username'],$_POST['name'],sha1($_POST['password']),$_POST['type'],));
+	function addRestaurant($db, $name, $owner, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $photos){
+		$stmt = $db->prepare('INSERT INTO Restaurant (id_owner, id_category, name, address, description, open_time, close_time, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+		$stmt->execute(array($owner, NULL, $name, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday));
 	}
 
  ?>

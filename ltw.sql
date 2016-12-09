@@ -24,16 +24,12 @@ CREATE TABLE Account (
 CREATE TABLE Restaurant (
 	id_restaurant INTEGER PRIMARY KEY AUTOINCREMENT,
 	id_owner INTEGER REFERENCES Account(id_account),
-	id_functionTime INTEGER REFERENCES FunctionTime(id_functionTime),
+	--id_functionTime INTEGER REFERENCES FunctionTime(id_functionTime),
 	id_category VARCHAR REFERENCES Category(id_category),
 	name VARCHAR NOT NULL,
 	address VARCHAR NOT NULL,
 	description VARCHAR,
-	stars REAL 
-);
-
-CREATE TABLE FunctionTime (
-	id_functionTime INTEGER PRIMARY KEY AUTOINCREMENT,
+	stars REAL,
 	open_time VARCHAR NOT NULL,
 	close_time VARCHAR NOT NULL,
 	monday BOOLEAN NOT NULL,
@@ -44,6 +40,19 @@ CREATE TABLE FunctionTime (
 	saturday BOOLEAN NOT NULL,
 	sunday BOOLEAN NOT NULL
 );
+
+/*CREATE TABLE FunctionTime (
+	id_functionTime INTEGER PRIMARY KEY,
+	open_time VARCHAR NOT NULL,
+	close_time VARCHAR NOT NULL,
+	monday BOOLEAN NOT NULL,
+	tuesday BOOLEAN NOT NULL,
+	wednesday BOOLEAN NOT NULL,
+	thursday BOOLEAN NOT NULL,
+	friday BOOLEAN NOT NULL,
+	saturday BOOLEAN NOT NULL,
+	sunday BOOLEAN NOT NULL
+);*/
 
 
 CREATE TABLE Review (

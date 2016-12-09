@@ -1,7 +1,7 @@
 	<div id="content">
 		<h1> Create Restaurant </h1>
 		<div>
-			<form action="action_add_restaurant.php" class="big_form" method="post">
+			<form action="action_add_restaurant.php" class="big_form" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<legend>Opening Hours</legend>
 					<p><label>Name: 
@@ -16,16 +16,16 @@
 
 				<fieldset>
 					<legend>Opening Hours</legend>
-					Hours: <input type="time" value='00:00'> - <input type="time" value = '23:59'><br><br>
+					Hours: <input name="open_time" type="time" value='00:00'> - <input name="close_time" type="time" value = '23:59'><br><br>
 					<ul class="simple_list">					
 						<li><input class="select_all" type="checkbox" checked="checked" data-group=".group1" value="all_checked">All Checked<br><br></li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="monday">Monday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="tuesday">Tuesday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="wednesday">Wednesday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="thursday">Thursday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="friday">Friday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="saturday">Saturday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="sunday">Sunday</li>
+						<li><input class="group1" name="monday" type="checkbox" checked="checked" value="true">Monday</li>
+						<li><input class="group1" name="tuesday" type="checkbox" checked="checked" value="true">Tuesday</li>
+						<li><input class="group1" name="wednesday" type="checkbox" checked="checked" value="true">Wednesday</li>
+						<li><input class="group1" name="thursday" type="checkbox" checked="checked" value="true">Thursday</li>
+						<li><input class="group1" name="friday" type="checkbox" checked="checked" value="true">Friday</li>
+						<li><input class="group1" name="saturday" type="checkbox" checked="checked" value="true">Saturday</li>
+						<li><input class="group1" name="sunday" type="checkbox" checked="checked" value="true">Sunday</li>
 					</ul>
 				</fieldset>
 				<fieldset>
@@ -47,6 +47,10 @@
 					</ul>
 					<button class="button_1"> Add Category </button>
 				</fieldset>
+				<fieldset>
+					<legend> Images Upload </legend>
+					<input type="file" name="upload[]" multiple>
+        		</fieldset>
 				<button type="submit" class="button_1"> Create restaurant </button>
 			</form>
 		</div>
