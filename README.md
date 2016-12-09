@@ -8,7 +8,7 @@
 
 #### Geral
 - search bar 
-- botão fixed no canto inferior direito para redirecionar para o topo da página
+- botão fixed no canto inferior direito para redirecionar para o topo da página -> js e css feitos
 
 ##### Restaurant (1 só)
 - comentários, classificar e deixar review
@@ -21,7 +21,7 @@
 - css
 
 #### Account (Nome)
-- action_edit_account (Pega na informação do edit_account_form)
+- action_edit_account (Pega na informação do edit_account_form) -> falta editar a pass.
 - action_delete_account Apartir do botão de delete no account_manager
 
 #### Sign Up
