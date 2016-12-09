@@ -162,3 +162,22 @@ fieldset >*{
     text-decoration: none;
     cursor: pointer;
 }
+
+
+ #top {
+	background: white;
+    color: black;
+	text-align: center;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+	z-index: 1000;
+}
+#top.show {
+    opacity: 1;
+}
