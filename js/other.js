@@ -32,3 +32,26 @@ $(function() {
 		});
     });
 });
+
+
+$(window).load(function(){
+    var trigger = 200, 
+        Top = function () {
+            var distance = $(window).scrollTop();
+            if (distance > trigger) {
+                $('#top').addClass('show');
+            } else {
+                $('#top').removeClass('show');
+            }
+        };
+    Top();
+    $(window).on('scroll', function () {
+        Top();
+    });
+    $('#top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+});
