@@ -7,29 +7,18 @@
 ## Falta Fazer
 
 #### Geral
-- search bar 
-- botão fixed no canto inferior direito para redirecionar para o topo da página -> js e css feitos
+- search bar
 
 ##### Restaurant (1 só)
 - comentários, classificar e deixar review
-- se pertencer a owner, posso editar
+- se pertencer a owner, posso editar/remover
 
 #### Advanced Search
 - fazer o action_advanced_search que pega na informação apartir do Advanced Search e faz uma pesquisa com toda aquela informação. Campos que não foram preenchidos significa que a pesquisa para aquele tipo de campo é indiferente.
 
-#### Information
-- css
-
 #### Account (Nome)
-- action_edit_account (Pega na informação do edit_account_form) -> falta editar a pass.
-- action_delete_account Apartir do botão de delete no account_manager
-
-#### Sign Up
-- Introduzi na base de dados o gender e age mas acho que não está a meter bem os dados. Se for homem o valor = 1 se for mulher = 2 mas ele mete o valor sempre a 0. O problema pode ser na forma como o valor é passado.
-
-##### Owner
-- action_add_restaurant
-- action_remove_restaurant
+- action_edit_account -> problema em editar a pass por causa do sha1
+- action_delete_account -> fazer logout "instantaneo" e ir para o index
 
 #### Reviewer
 - Os meus restaurantes preferidos
