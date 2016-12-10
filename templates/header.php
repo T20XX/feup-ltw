@@ -14,7 +14,7 @@
 			
 			<div id="search_bar">
 				<input type="text" name="search">
-				<button type="submit"\>
+				<button type="submit"/>
 			</div>
 			
 			<div id="menu">
@@ -45,5 +45,6 @@
 				<input class="insert_info" type="password" name="password" required="required">
 				<input id="login_button" class="button_1" type="submit" value="Login">
 			</form>
-					<a href="#" id="top">Top</a>
+			
+			<a id="button_top" class="button_top"></a>
 		</div>

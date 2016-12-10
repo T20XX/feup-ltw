@@ -41,30 +41,11 @@ body {
 #content{
 	width: 1000px;
 	margin: 0px auto;
-}
-
-
-#content/*, #side_bar*/{
-  display: none;
-  background-color: rgba(0,0,0,0.5);
-  color: #ffffff;
-  padding: 1%;
-  margin-bottom: 100px;
-}
-
-/*#content{
-	width:80%;
-	overflow: auto;
-  float: left;
-}*/
-
-#side_bar {							/*Não é para aparecer a side_bar*/
-	background-color : #00ff00;
-	width:19%;
-	margin-left:1%;
-	/*float: right;*/
 	display: none;
-	
+	background-color: rgba(0,0,0,0.5);
+	color: #ffffff;
+	padding: 1%;
+	margin-bottom: 100px;
 }
 
 #content div/*, #side_bar div*/{
@@ -112,10 +93,18 @@ body {
 	top: 32%;
 	left:50%;
 	width:200px;
-	margin-left: -160px;
+	margin-left: -150px;
 	color: #ffffff;
 	padding:20px;
 	border-radius: 30px;
+}
+
+#credits >*{
+	font-size: 30px;
+	margin: 20px;
+	display:block;
+	text-align: center;
+	color: white;
 }
 
 .big_form > *{
@@ -123,7 +112,7 @@ body {
 }
 
 .small_form >*{
-	margin: 10px;
+	margin: 5px;
 }
 
 fieldset >*{
@@ -164,20 +153,20 @@ fieldset >*{
 }
 
 
- #top {
-	background: white;
+.button_top {
+	background-image: url(images/top-button.png);
+	background-size: 40px;
+	display: none;
+	border-radius: 45px;
+	background-color: rgba(255,255,255,0.5);
     color: black;
 	text-align: center;
     position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 30px;
-    line-height: 30px;
+    bottom: 90px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
     text-decoration: none;
-    transition: opacity 0.2s ease-out;
-    opacity: 0;
 	z-index: 1000;
-}
-#top.show {
-    opacity: 1;
+	cursor: pointer;
 }

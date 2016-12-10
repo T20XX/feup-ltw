@@ -93,3 +93,29 @@ $(function() {
         $(form).submit();
     });
 });
+
+$(window).load(function(){
+    var trigger = 200, 
+        Top = function () {
+            var distance = $(window).scrollTop();
+            if (distance > trigger) {
+				$("#button_top").fadeIn(1000);
+				$("#button_top").css("display", "block");
+            } else {
+				$("#button_top").fadeOut(1000);
+				$("#button_top").promise().done(function(){		/*waits for animation to end*/
+					$("#button_top").css("display", "none");
+				});
+            }
+        };
+    Top();
+    $(window).on('scroll', function () {
+        Top();
+    });
+    $('#button_top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+});
