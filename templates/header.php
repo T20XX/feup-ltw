@@ -6,7 +6,6 @@
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="js/header.js"></script>
 		<script src="js/other.js"></script>
-		
 	</head>
 	<body>
 		<div id="header">
@@ -46,5 +45,5 @@
 				<input class="insert_info" type="password" name="password" required="required">
 				<input id="login_button" class="button_1" type="submit" value="Login">
 			</form>
-					
+					<a href="#" id="top">Top</a>
 		</div>

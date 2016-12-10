@@ -55,3 +55,9 @@ $(window).load(function(){
         }, 700);
     });
 });
+
+$(function() {
+    $("#button_delete_account").click(function() {
+		window.location = "action_delete_account.php";
+	});
+});

@@ -25,4 +25,9 @@
 		$stmt->execute(array($owner, NULL, $name, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday));
 	}
 
+	
+	function deleteRestaurants($db,$username){
+		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_owner = ?');
+		$stmt->execute(array($username));
+	}
  ?>

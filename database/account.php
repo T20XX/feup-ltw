@@ -14,4 +14,13 @@
 	$stmt=$db->prepare($sql);
 	$stmt->execute(array($name,$age,$gender));
 	}
- ?>
+
+	function deleteAccount($db,$username){
+	$stmt = $db->prepare("DELETE FROM Account WHERE id_account=?");
+	$stmt->execute(array($username));
+	}
+
+	?>
+ 
+ 
+ 

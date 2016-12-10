@@ -13,5 +13,5 @@
 		?>
 	</div>
 	<button id="button_edit_account" class="button_1"> Edit Account </button>
-	<button class="button_1"> Delete Account </button>
+	<button id="button_delete_account" class="button_1"> Delete Account </button>
 </div>
