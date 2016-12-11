@@ -1,17 +1,18 @@
 # LTW1
 
 ## Contas
-- username: Owner password: 12345 type: owner
-- username: Teste password: 12345 type: reviewer
+- username: owner1 password: 12345 type: owner
+- username: reviewer1 password: 12345 type: reviewer
 
 ## Falta Fazer
 
 #### Geral
-- search bar
+- search bar procura pelo nome do restaurante
 
 ##### Restaurant (1 só)
-- comentários, classificar e deixar review
-- se pertencer a owner, posso editar/remover
+- reply -> Catarina
+- action_edit_restaurant
+- action_remove_restaurant ( remover tudo o que esteja relacionado incluindo reviews)
 
 #### Advanced Search
 - fazer o action_advanced_search que pega na informação apartir do Advanced Search e faz uma pesquisa com toda aquela informação. Campos que não foram preenchidos significa que a pesquisa para aquele tipo de campo é indiferente.
@@ -21,15 +22,12 @@
 - action_delete_account -> fazer logout "instantaneo" e ir para o index
 
 #### Reviewer
-- Os meus restaurantes preferidos
+- Lista de restaurantes ordenados descendente pelo score que o dono da conta deu
 
 #### Restaurants
 - Lista com o nome de todos os restaurantes por ordem alfabética e href para o restaurante específico
 
-#### Home
-- Lista com todos os restaurantes
-
-## Implementado
-- Login, logout e signup
-- opção para criar novo restaurante se for owner
-- Forms para criar/edita conta, criar restaurante, advance_search
+#### Extra
+- Poder ver contas de outras utilizadores por exemplo:
+  reviews fazer href para página do reviewer que comentou
+  restaurant fazer href para a conta que criou o restaurante e ver todos os restaurantes criados
