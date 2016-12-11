@@ -1,4 +1,12 @@
 <?php
+
+	function getTop10Restaurant($db){
+		$stmt = $db->prepare('SELECT * FROM Restaurant ORDER BY stars DESC LIMIT 10');
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		return $result;
+	}
+	
 	function getAllRestaurant($db){
 		$stmt = $db->prepare('SELECT * FROM Restaurant ORDER BY name ASC');
 		$stmt->execute();
@@ -26,9 +34,20 @@
 		$result = $stmt->fetch();
 		return $result;
 	}
+	
+	function updateRestaurantRating($db,$id){
+		$stmt = $db->prepare('SELECT AVG(score) FROM Review WHERE id_restaurant = ?');
+		$stmt->execute(array($id));
+		$result = $stmt->fetch();
+		
+		$score = number_format($result[0], 2, '.', '');
+		
+		$update = $db->prepare('UPDATE Restaurant SET stars = ? WHERE id_restaurant = ?');
+		$update->execute(array($score,$id));
+	}
 
 	function addRestaurant($db, $name, $owner, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $photos){
-		$stmt = $db->prepare('INSERT INTO Restaurant (id_owner, id_category, name, address, description, open_time, close_time, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+		$stmt = $db->prepare('INSERT INTO Restaurant (stars,id_owner, id_category, name, address, description, open_time, close_time, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (0,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
 		$stmt->execute(array($owner, NULL, $name, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday));
 	}
 	
@@ -48,7 +67,6 @@
 			$exec->execute(array($id_restaurant,$category));
 		}
 	}
-
 	
 	function deleteRestaurants($db,$username){
 		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_owner = ?');

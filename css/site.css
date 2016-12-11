@@ -109,6 +109,11 @@ body {
 	margin: 5px;
 }
 
+.big_textArea{
+	resize: none;
+	height:100px;
+}
+
 fieldset >*{
 	margin: 5px;
 }
@@ -118,12 +123,22 @@ fieldset >*{
 	padding : 4%;
 }
 
+.review {
+	border-style: outset;
+	padding : 1%;
+}
+
 .max_width{
 	width: 100%;
 }
 
 .title{
 	text-align: center;
+}
+
+.subtitle{
+	border-bottom-style: outset;
+	color:white;
 }
 
 .simple_list{

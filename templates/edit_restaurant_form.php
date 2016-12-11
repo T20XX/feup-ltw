@@ -1,7 +1,7 @@
-	<div id="content">
-		<h1> Create Restaurant </h1>
+<div id="content">
+		<h1> Edit Restaurant </h1>
 		<div>
-			<form action="action_add_restaurant.php" class="big_form" method="post" enctype="multipart/form-data">
+			<form action="action_edit_restaurant.php" class="big_form" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<legend>Opening Hours</legend>
 					<p><label>Name: 
@@ -11,7 +11,7 @@
 						<input type="text" class="max_width" name="address" required="required">
 					</label></p>
 					<p><label>Description:</label></p>
-					<textarea type="text" class="max_width bit_textArea" name="description" required="required"></textarea>
+					<textarea type="text" class="max_width" name="description" required="required"></textarea>
 				</fieldset>
 
 				<fieldset>
@@ -50,7 +50,7 @@
 					<legend> Images Upload </legend>
 					<input type="file" name="upload[]" multiple>
         		</fieldset>
-				<input type="submit" class="button_1 button" value="Create restaurant" />
+				<input type="submit" class="button_1 button" value="Edit restaurant" />
 			</form>
 		</div>
 	</div>
