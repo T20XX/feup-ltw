@@ -1,8 +1,9 @@
 <div id="content">
 	
-	<div>
+	<div id="restaurant information">	
 		<?php
 			$result = getRestaurantItem($db, array($_GET['id']));
+			$categories = getRestaurantFood($db,$_GET['id']);
 			if($result['id_owner'] == $_SESSION['id_account']){
 				?>
 				<input action="edit_restaurant.php" class="button_1 button" type="submit" value="Edit Restaurant">
@@ -15,6 +16,23 @@
 			echo '<h4> Address : ' . $result['address'] . '</h4>';
 			echo '<p> Description </p>';
 			echo '<p>' . $result['description'] . '</p>';
+			
+			echo '<p> Function Time : from ' . $result['open_time'] . ' to ' . $result['close_time'];
+			if($result['monday']) echo ', Monday';
+			if($result['tuesday']) echo ', Tuesday';
+			if($result['wednesday']) echo ', Wednesday';
+			if($result['thursday']) echo ', Thursday';
+			if($result['friday']) echo ', Friday';
+			if($result['saturday']) echo ', Saturday';
+			if($result['sunday']) echo ', Sunday';
+			echo '</p>';
+			
+			
+			echo '<p> Categories: ';
+			foreach($categories as $category)
+				echo $category['id_category'] . '  ';
+			echo '</p>';
+									
 			echo '<img src="images/'. $result['name'] . '_0" alt="Image" width="500px">'
 		?>
 	</div>
@@ -23,31 +41,8 @@
 		
 		<?php
 		
-			if($_SESSION['type'] == "reviewer"){ ?>
-				 <form action="action_add_review.php" class = "big_form" method="post">
-					<fieldset>
-						<legend> Add Review </legend>
-						
-						<?php 
-							echo '<input type="hidden" name="id_restaurant" value="' . $_GET['id'] . '">'; 
-						?>
-						
-						<div>
-							<label> Score </label>
-							<input type="radio" name="score" value="1" checked="checked">
-							<input type="radio" name="score" value="2">
-							<input type="radio" name="score" value="3">
-							<input type="radio" name="score" value="4">
-							<input type="radio" name="score" value="5">
-						</div>
-						<p><label>Comment: 
-							<textArea type="text" class="max_width big_textArea" name="comment" required="required"></textArea>
-						</label></p>
-						<input class="button_1 button" type="submit" value="Add Review">
-					</fieldset>
-					
-				</form>
-			<?php
+			if($_SESSION['type'] == "reviewer"){
+				include('review_form.php');
 			}
 			
 			$reviews = getAllReviews($db, $_GET['id']);
