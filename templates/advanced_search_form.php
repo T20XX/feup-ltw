@@ -54,7 +54,7 @@
 					</ul>
 				</fieldset>
 				
-				<button class="button_1" type="submit"> Search Restaurant </button>
+				<input class="button_1 button" type="submit" value="Search Restaurant"/>
 				
 			</form>
 		</div>

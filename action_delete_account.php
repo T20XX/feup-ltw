@@ -6,15 +6,7 @@
 	deleteRestaurants($db,$_SESSION['id_account']);
 	deleteAccount($db,$_SESSION['id_account']);
 	session_destroy();
-    include ('templates/header.php');  
 
+	header('Location: index.php');
 ?>
-	<div id="content">
-<?php
-	echo 'Account succesfully deleted!';
-		
-?>
-	</div>
-<?php
-	include ('templates/footer.php');
-?>
+	

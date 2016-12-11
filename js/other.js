@@ -14,28 +14,3 @@ $(function() {
 		});
 	});
 });
-
-$(function() {
-    $("#button_edit_account").click(function() {
-		$("#content").slideUp(1000).fadeOut(1000);
-        $("#content").promise().done(function(){		/*waits for animation to end*/
-			window.location = "edit_account.php";
-		});
-    });
-});
-
-$(function() {
-    $("#button_add_restaurant").click(function() {
-		$("#content").slideUp(1000).fadeOut(1000);
-        $("#content").promise().done(function(){		/*waits for animation to end*/
-			window.location = "add_restaurant.php";
-		});
-    });
-});
-
-
-$(function() {
-    $("#button_delete_account").click(function() {
-		window.location = "action_delete_account.php";
-	});
-});

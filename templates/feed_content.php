@@ -1,13 +1,12 @@
 <div id="content">
-	<ul>
+	<h1 class="title"> Home </h1>
+	<div class="display_big_center">
 		<?php
-			include_once getcwd() . "/database/connection.php";
-			include_once getcwd() . "/database/restaurant.php";
 			$result = getAllRestaurant($db);
 			
 			foreach( $result as $row) {
-				echo '<li><a class="feed" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a></li>';
+				echo '<a class="item" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
 			 }
 		?>
-	</ul>
+	</div>
 </div>

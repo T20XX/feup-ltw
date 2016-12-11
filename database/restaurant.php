@@ -1,6 +1,6 @@
 <?php
 	function getAllRestaurant($db){
-		$stmt = $db->prepare('SELECT * FROM Restaurant');
+		$stmt = $db->prepare('SELECT * FROM Restaurant ORDER BY name ASC');
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result;

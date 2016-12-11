@@ -31,6 +31,6 @@
 						?>>Female
 					</div>
 				</fieldset>
-				<input class="button_1" type="submit" value="Edit">
+				<input class="button_1 button" type="submit" value="Save Changes">
 			</form>
 	</div>

@@ -12,6 +12,6 @@
 			echo '<h3> Type: ' . $_SESSION['type'] . '</h3>';
 		?>
 	</div>
-	<button id="button_edit_account" class="button_1"> Edit Account </button>
-	<button id="button_delete_account" class="button_1"> Delete Account </button>
+	<input id="button_edit_account" action="edit_account.php" class="button_1 button" value="Edit Account"/>
+	<input id="button_delete_account" action="delete_account.php" class="button_1 button" value="Delete Account"/>
 </div>

@@ -45,13 +45,13 @@
 					 }
 					?>
 					</ul>
-					<button class="button_1"> Add Category </button>
+					<input type="submit" class="button_1 button" value="Add Category"/>
 				</fieldset>
 				<fieldset>
 					<legend> Images Upload </legend>
 					<input type="file" name="upload[]" multiple>
         		</fieldset>
-				<button type="submit" class="button_1"> Create restaurant </button>
+				<input type="submit" class="button_1 button" value="Create restaurant" />
 			</form>
 		</div>
 	</div>

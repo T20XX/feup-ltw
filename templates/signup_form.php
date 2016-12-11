@@ -26,6 +26,6 @@
 						<input type="radio" name="type" value="owner">Owner
 					</div>
 				</fieldset>
-				<button class= "button_1" type="submit"> Register </button>
+				<input class= "button_1 button" type="submit" value="Register"/>
 			</form>
 	</div>
