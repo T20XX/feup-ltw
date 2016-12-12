@@ -29,6 +29,8 @@
 					if (isset($_SESSION['id_account'])){
 						if($_SESSION['type'] == 'owner')
 								echo '<li><input id="go_my_restaurants" class="header_button button" action="my_restaurants.php" type="submit" value="My Restaurants" /></li>';
+						else
+								echo '<li><input id="go_my_favorite" class="header_button button" action="my_favorite.php" type="submit" value="My Favorite" /></li>';
 						echo '<li><input id="go_my_account" class="header_button button" action="my_account.php" type="submit" value="' . $_SESSION['name'] .'" /></li>';
 						echo '<li><input id="do_logout" class="header_button button" action="action_logout.php" type="submit" value="Logout" /></li>';
 					}

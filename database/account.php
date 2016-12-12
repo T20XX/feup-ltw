@@ -19,7 +19,13 @@
 	$stmt = $db->prepare("DELETE FROM Account WHERE id_account=?");
 	$stmt->execute(array($username));
 	}
-
+	
+	function getFavoriteRestaurants($db, $username){
+		$stmt = $db->prepare('SELECT * FROM Restaurant WHERE id_restaurant IN (SELECT id_restaurant FROM Review WHERE id_reviewer = ? ORDER BY score DESC)');
+		$stmt->execute(array($username));
+		$result = $stmt->fetchAll();
+		return $result;
+	}
 	?>
  
  
