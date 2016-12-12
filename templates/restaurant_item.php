@@ -1,5 +1,4 @@
 <div id="content">
-	
 	<div id="restaurant information">	
 		<?php
 			$result = getRestaurantItem($db, array($_GET['id']));
@@ -13,7 +12,7 @@
 			
 			echo '<h1>' . $result['name'] . '</h1>';
 			echo '<h3> Rating : ' . $result['stars'] . '</h3>';
-			echo '<h4> Address : ' . $result['address'] . '</h4>';
+			echo '<h4> Address : <p id="address">' . $result['address'] . '</p></h4>';
 			echo '<p> Description :</p>';
 			echo '<p>' . $result['description'] . '</p>';
 			
@@ -37,7 +36,9 @@
 				
 			echo '<img src="images/'. $result['name'] . '_0" alt="Image" width="500px">'
 		?>
+
 	</div>
+	<div id="map"></div>
 	<div>
 		<h2 class="subtitle"> Comments </h2>
 		
@@ -62,3 +63,29 @@
 	</div>
 	
 </div>
+<script>
+      function initMap() {
+
+        var geocoder = new google.maps.Geocoder();
+        var restaurant = {lat: -25.363, lng: 131.044};
+         var address = document.getElementById('address').innerHTML;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            var map = new google.maps.Map(document.getElementById('map'), {
+          		zoom: 15,
+          		center: results[0].geometry.location
+          		});
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+          } else {
+            //alert('Geocode was not successful for the following reason: ' + status);
+          }
+        
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtWK2oxBU_WhzpUnS6uhHsJoylnJz-Kvc&callback=initMap">
+    </script>
