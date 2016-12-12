@@ -8,6 +8,7 @@
 
 #### Geral
 - search bar procura pelo nome do restaurante
+- google maps
 
 ##### Restaurant (1 só)
 - reply -> Catarina
