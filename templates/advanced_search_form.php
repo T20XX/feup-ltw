@@ -13,7 +13,7 @@
 						<input type="text" class="max_width" name="address_name" value="">
 					<p><label></p>
 					<p><label>Stars (Minimum) : 0
-						<input type="range" value="0" min="0" max="5" step="1"> 5
+						<input type="range" value="0" min="0" max="5" step="1" name="stars"> 5
 					</label></p>
 				</fieldset>
 
@@ -23,14 +23,14 @@
 					Hours: <input type="time" value='00:00'> - <input type="time" value = '23:59'><br><br>
 					
 					<ul class="simple_list">					
-						<li><input class="select_all" type="checkbox" checked="checked" data-group=".group1" value="all_checked">All Checked<br><br></li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="monday">Monday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="tuesday">Tuesday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="wednesday">Wednesday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="thursday">Thursday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="friday">Friday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="saturday">Saturday</li>
-						<li><input class="group1" name="check[]" type="checkbox" checked="checked" name="opening_days" value="sunday">Sunday</li>
+						<li><input class="select_all" type="checkbox" checked="checked" data-group=".group1">All Checked<br><br></li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="monday">Monday</li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="tuesday">Tuesday</li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="wednesday">Wednesday</li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="thursday">Thursday</li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="friday">Friday</li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="saturday">Saturday</li>
+						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="sunday">Sunday</li>
 					</ul>
 				</fieldset>
 				
