@@ -8,10 +8,8 @@
 
 #### Geral
 - search bar procura pelo nome do restaurante
-- google maps
 
 ##### Restaurant (1 só)
-- reply -> Catarina
 - action_edit_restaurant
 - action_remove_restaurant ( remover tudo o que esteja relacionado incluindo reviews)
 
@@ -27,8 +25,9 @@
 #### PHOTO
 - Não mostra as photos direito
 
-#### Restaurant
-- Por parametro de preço medio
+#### Segurança
+- expressões regulares
+- Mudar a maneira como a password é encriptada
 
 #### Extra
 - Poder ver contas de outras utilizadores por exemplo:
