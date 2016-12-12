@@ -8,6 +8,7 @@
 
 #### Geral
 - search bar procura pelo nome do restaurante
+- google maps
 
 ##### Restaurant (1 só)
 - reply -> Catarina
@@ -19,13 +20,15 @@
 
 #### Account (Nome)
 - action_edit_account -> problema em editar a pass por causa do sha1
-- action_delete_account -> fazer logout "instantaneo" e ir para o index
 
 #### Reviewer
 - Lista de restaurantes ordenados descendente pelo score que o dono da conta deu
 
-#### Restaurants
-- Lista com o nome de todos os restaurantes por ordem alfabética e href para o restaurante específico
+#### PHOTO
+- Não mostra as photos direito
+
+#### Restaurant
+- Por parametro de preço medio
 
 #### Extra
 - Poder ver contas de outras utilizadores por exemplo:
