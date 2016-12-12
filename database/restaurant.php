@@ -67,6 +67,30 @@
 			$exec->execute(array($id_restaurant,$category));
 		}
 	}
+
+	function addPhotosRestaurant($db,$name,$owner,$photosPath){
+		$id_restaurant = getRestaurantId($db,$name,$owner);
+		
+		if(is_array($photosPath)){
+			foreach($photosPath as $photoPath){
+				$exec = $db->prepare('INSERT INTO Photo (id_restaurant,path) VALUES (?,?)');
+				$exec->execute(array($id_restaurant,$photoPath));
+			}			
+		}
+		else
+		{
+			$photoPath = $photosPath;
+				$exec = $db->prepare('INSERT INTO Photo (id_restaurant,path) VALUES (?,?)');
+				$exec->execute(array($id_restaurant,$photoPath));
+		}
+	}
+	
+	function getRestaurantPhotos($db,$id_restaurant){
+		$stmt = $db->prepare('SELECT path FROM Photo WHERE id_restaurant = ?');
+		$stmt->execute(array($id_restaurant));
+		$result = $stmt->fetchAll();
+		return $result;
+	}
 	
 	function deleteRestaurants($db,$username){
 		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_owner = ?');

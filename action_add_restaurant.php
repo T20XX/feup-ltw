@@ -9,40 +9,41 @@
 	if($already_exists == NULL){
 		// Count # of uploaded files in array
 		$total = count($_FILES['upload']['name']);
+		$totalSize = 0;
 
+		for($i=0; $i<$total; $i++) {
+			$totalSize += $_FILES['upload']['size'][$i];
+			echo $_FILES['upload']['size'][$i];
+		}
+
+					echo $totalSize;
+
+
+		if ($totalSize < 50000000){
 		// Loop through each file
 		for($i=0; $i<$total; $i++) {
 		  //Get the temp file path
-		  $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+			$tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+			echo $tmpFilePath;
 
 		  //Make sure we have a filepath
 			if ($tmpFilePath != ""){
-				$uploadOk = 1;
 				$imageFileType = pathinfo($_FILES['upload']['name'][$i],PATHINFO_EXTENSION);
 
-				// Check file size
-				/*if ($_FILES["upload"]["size"][$i] > 500000) {
-					echo "Sorry, your file is too large.";
-					$uploadOk = 0;
-				}*/
+				echo 'photo uploaded';
+
 				// Allow certain file formats
 				if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
 					echo $imageFileType;
 					echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-					$uploadOk = 0;
-				}
-				// Check if $uploadOk is set to 0 by an error
-				if ($uploadOk == 0) {
-					echo "Sorry, your file was not uploaded.";
-				// if everything is ok, try to upload file
 				} else {
+			echo 'photo uploaded';
 
 				//Setup our new file path
-				$newFilePath = "images/" . $_POST['name'] . "_" . $i ;
+				$newFilePath[$i] = "images/" . $_POST['name'] . "_" . $i ;
 				//Upload the file into the temp dir
-					if(move_uploaded_file($tmpFilePath, $newFilePath)) {
-
-					  //Handle other code here
+					if(move_uploaded_file($tmpFilePath, $newFilePath[$i])) {
+			echo 'photo uploaded';
 
 					}
 				}
@@ -64,11 +65,15 @@
 		addRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['address'], $_POST['description'], $_POST['avg_price'],$_POST['open_time'], $_POST['close_time'],$monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday, NULL);
 		echo 'ok';
 		addCategoriesRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['categories']);
+		addPhotosRestaurant($db, $_POST['name'], $_SESSION['id_account'], $newFilePath);
 
 		echo '<div id="content">';
 		echo '<p> Restaurant added with success!</p>';
+	}else{
+		echo '<div id="content">';
+		echo "Images added to upload excceed the maximum size allowed!";
 	}
-	else
+	}else
 	{
 		echo '<div id="content">';
 		echo '<p> Could not add Restaurant beacuse the owner already has a restaurant with the same name!</p>';

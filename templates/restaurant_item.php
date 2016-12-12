@@ -3,6 +3,7 @@
 		<?php
 			$result = getRestaurantItem($db, array($_GET['id']));
 			$categories = getRestaurantFood($db,$_GET['id']);
+			$photos = getRestaurantPhotos($db,$_GET['id']);
 			if($result['id_owner'] == $_SESSION['id_account']){
 				?>
 				<input action="edit_restaurant.php" class="button_1 button" type="submit" value="Edit Restaurant">
@@ -33,8 +34,12 @@
 			foreach($categories as $category)
 				echo $category['id_category'] . '  ';
 			echo '</p>';
+
+			echo '<p> Photos : <br>';
+			foreach($photos as $photo)
+				echo '<img src=' . $photo['path'] . ' alt="Image" width="20%">';
+			echo '</p>';
 				
-			echo '<img src="images/'. $result['name'] . '_0" alt="Image" width="500px">'
 		?>
 
 	</div>
