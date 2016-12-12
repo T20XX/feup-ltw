@@ -194,3 +194,8 @@ fieldset >*{
     height: 40px;
 	z-index: 1000;
 }
+
+#map {
+	padding-bottom : 50%;
+	width: 50%;
+}
