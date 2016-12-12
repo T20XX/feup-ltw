@@ -48,10 +48,9 @@ body {
 	margin-bottom: 100px;
 }
 
-#content > */*, #side_bar div*/{
+#content > *{
 	display:block;
 	margin:20px;
-	
 }
 
 
@@ -92,6 +91,10 @@ body {
 	z-index: 1000;
 }
 
+#comments >*{
+	display: none;
+}
+
 .display_big_center > *{
 	font-size: 25px;
 	margin: 10px;
@@ -114,6 +117,11 @@ body {
 	height:100px;
 }
 
+.small_textArea{
+	resize: none;
+	height:70px;
+}
+
 fieldset >*{
 	margin: 5px;
 }
@@ -125,7 +133,8 @@ fieldset >*{
 
 .review {
 	border-style: outset;
-	padding : 10%;
+	padding : 1%;
+	margin: 10px;
 }
 
 .max_width{
@@ -138,6 +147,11 @@ fieldset >*{
 
 .subtitle{
 	border-bottom-style: outset;
+}
+
+.info {
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 .simple_list{
@@ -197,5 +211,5 @@ fieldset >*{
 
 #map {
 	padding-bottom : 50%;
-	width: 50%;
+	width: auto;
 }

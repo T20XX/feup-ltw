@@ -15,7 +15,7 @@
 							<input type="radio" name="score" value="5">
 						</div>
 						<p><label>Comment: 
-							<textArea type="text" class="max_width big_textArea" name="comment"></textArea>
+							<textArea type="text" class="max_width small_textArea" name="comment"></textArea>
 						</label></p>
 						<input class="button_1 button" type="submit" value="Add Review">
 					</fieldset>

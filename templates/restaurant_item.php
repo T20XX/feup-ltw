@@ -12,11 +12,11 @@
 			
 			echo '<h1>' . $result['name'] . '</h1>';
 			echo '<h3> Rating : ' . $result['stars'] . '</h3>';
-			echo '<h4> Address : <p id="address">' . $result['address'] . '</p></h4>';
-			echo '<p> Description :</p>';
+			echo '<h3 id="address"> Address : ' . $result['address'] . '</h3>';
+			echo '<h3> Description :</h3>';
 			echo '<p>' . $result['description'] . '</p>';
 			
-			echo '<p> Average Price : ' . $result['avg_price'] . '</p>';
+			echo '<h3> Average Price : ' . $result['avg_price'] . '</h3>';
 			
 			echo '<p> Function Time : from ' . $result['open_time'] . ' to ' . $result['close_time'];
 			if($result['monday']) echo ', Monday';
@@ -39,7 +39,10 @@
 
 	</div>
 	<div id="map"></div>
-	<div>
+	
+	<input id="button_comments" class="button_1 button" type="submit" value="Show Comments" >
+	
+	<div id="comments">
 		<h2 class="subtitle"> Comments </h2>
 		
 		<?php
@@ -76,7 +79,7 @@
 									echo '<input type="hidden" name="id_restaurant" value="' . $review['id_restaurant'] . '">';
 									echo '<input type="hidden" name="id_review" value="' . $review['id_review'] . '">';
 								?>
-								<textArea type="text" class="max_width big_textArea" name="comment"></textArea>
+								<textArea type="text" class="max_width small_textArea" name="comment"></textArea>
 								<input class="button_1 button" type="submit" value="Send" >
 							</fieldset>
 						</form>
