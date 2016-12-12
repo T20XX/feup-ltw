@@ -59,7 +59,10 @@ $(document).click(function(e) {
 For the top button to appear if the page is down
 */
 $(window).load(function(){
-    var trigger = 200, 
+	if ($(document).height() > $(window).height()) {
+     console.log("scroll");
+	}
+    var trigger = 100;
         Top = function () {
             var distance = $(window).scrollTop();
             if (distance > trigger) {

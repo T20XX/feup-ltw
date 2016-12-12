@@ -46,9 +46,9 @@
 		$update->execute(array($score,$id));
 	}
 
-	function addRestaurant($db, $name, $owner, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $photos){
-		$stmt = $db->prepare('INSERT INTO Restaurant (stars,id_owner, id_category, name, address, description, open_time, close_time, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (0,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
-		$stmt->execute(array($owner, NULL, $name, $address, $description, $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday));
+	function addRestaurant($db, $name, $owner, $address, $description, $avg_price,$open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $photos){
+		$stmt = $db->prepare('INSERT INTO Restaurant (stars,id_owner, id_category, name, address, avg_price,description, open_time, close_time, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (0,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+		$stmt->execute(array($owner, NULL, $name, $address, $avg_price, $description,  $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday));
 	}
 	
 	function addCategoriesRestaurant($db,$name,$owner,$categories){

@@ -58,8 +58,11 @@
 			$friday = in_array("friday",$_POST['days']);
 			$saturday = in_array("saturday",$_POST['days']);
 			$sunday = in_array("sunday",$_POST['days']);
+			
+			echo $_POST['avg_price'];
 		
-		addRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['address'], $_POST['description'], $_POST['open_time'], $_POST['close_time'],$monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday, NULL);
+		addRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['address'], $_POST['description'], $_POST['avg_price'],$_POST['open_time'], $_POST['close_time'],$monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday, NULL);
+		echo 'ok';
 		addCategoriesRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['categories']);
 
 		echo '<div id="content">';
