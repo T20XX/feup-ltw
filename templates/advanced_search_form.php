@@ -7,9 +7,8 @@
 					<p><label>Restaurant Name: 
 						<input type="text" class="max_width" name="restaurant_name" value="">
 					</label></p>
-					<p><label>Owner Name: 
-						<input type="text" class="max_width" name="owner_name" value="">
-					<p><label></p>
+					<p><label>Average Price: </label></p>
+					<input type="number" value="10" min="1" max="200" step="1" name="avg_price">
 					<p><label>Address: 
 						<input type="text" class="max_width" name="address_name" value="">
 					<p><label></p>

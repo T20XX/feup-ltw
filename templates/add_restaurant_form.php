@@ -10,6 +10,8 @@
 					<p><label>Address: 
 						<input type="text" class="max_width" name="address" required="required">
 					</label></p>
+					<p><label>Average Price: </label></p>
+					<input type="number" value="10" min="1" max="200" step="1" name="avg_price">
 					<p><label>Description:</label></p>
 					<textarea type="text" class="max_width bit_textArea" name="description" required="required"></textarea>
 				</fieldset>

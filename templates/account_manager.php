@@ -13,5 +13,5 @@
 		?>
 	</div>
 	<input id="button_edit_account" action="edit_account.php" class="button_1 button" value="Edit Account"/>
-	<input id="button_delete_account" action="delete_account.php" class="button_1 button" value="Delete Account"/>
+	<input id="button_delete_account" action="action_delete_account.php" class="button_1 button" value="Delete Account"/>
 </div>

@@ -14,8 +14,10 @@
 			echo '<h1>' . $result['name'] . '</h1>';
 			echo '<h3> Rating : ' . $result['stars'] . '</h3>';
 			echo '<h4> Address : ' . $result['address'] . '</h4>';
-			echo '<p> Description </p>';
+			echo '<p> Description :</p>';
 			echo '<p>' . $result['description'] . '</p>';
+			
+			echo '<p> Average Price : ' . $result['avg_price'] . '</p>';
 			
 			echo '<p> Function Time : from ' . $result['open_time'] . ' to ' . $result['close_time'];
 			if($result['monday']) echo ', Monday';
@@ -28,11 +30,11 @@
 			echo '</p>';
 			
 			
-			echo '<p> Categories: ';
+			echo '<p> Categories : ';
 			foreach($categories as $category)
 				echo $category['id_category'] . '  ';
 			echo '</p>';
-									
+				
 			echo '<img src="images/'. $result['name'] . '_0" alt="Image" width="500px">'
 		?>
 	</div>

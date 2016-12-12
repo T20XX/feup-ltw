@@ -28,6 +28,7 @@ CREATE TABLE Restaurant (
 	id_category VARCHAR REFERENCES Category(id_category),
 	name VARCHAR NOT NULL,
 	address VARCHAR NOT NULL,
+	avg_price INTEGER NOT NULL,
 	description VARCHAR,
 	stars REAL,
 	open_time VARCHAR NOT NULL,

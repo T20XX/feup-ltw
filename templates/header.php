@@ -2,10 +2,12 @@
 <html>
 	<head>
 		<title>Table for Two</title>
-		<link rel="stylesheet" href="css/site.css">
+		<meta charset="UTF-8">
+		
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="js/page_definitions.js"></script>
 		<script src="js/other.js"></script>
+		<link rel="stylesheet" href="css/site.css">
 	</head>
 	<body>
 		<div id="header">
