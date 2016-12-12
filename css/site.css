@@ -125,7 +125,7 @@ fieldset >*{
 
 .review {
 	border-style: outset;
-	padding : 1%;
+	padding : 10%;
 }
 
 .max_width{
@@ -138,7 +138,6 @@ fieldset >*{
 
 .subtitle{
 	border-bottom-style: outset;
-	color:white;
 }
 
 .simple_list{
@@ -177,7 +176,7 @@ fieldset >*{
 	background-size: 21px;
 	width: 21px;
 	height: 21px;
-	float: right
+	float: right;
 }
 
 .button_top {

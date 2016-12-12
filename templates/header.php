@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title>Table for Two</title>
-		<meta charset="UTF-8">
+		<meta charset='UTF-8'>
 		
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.js"></script>
 		<script src="js/page_definitions.js"></script>
 		<script src="js/other.js"></script>
 		<link rel="stylesheet" href="css/site.css">

@@ -68,6 +68,7 @@ CREATE TABLE Review (
 CREATE TABLE Reply (
 	id_reply INTEGER PRIMARY KEY AUTOINCREMENT,
 	id_review INTEGER REFERENCES Review(id_review),
+	id_replyer INTEGER REFERENCES Account(id_account),
 	comment VARCHAR NOT NULL	
 );
 	

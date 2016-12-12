@@ -51,9 +51,35 @@
 			
 			foreach($reviews as $review){
 				echo '<div class="review">';
-					echo '<p>' . $review['id_reviewer'] . '</p>';
-					echo '<p>Stars: ' . $review['score'] . '</p>';
-					echo '<p>' . $review['comment'] . '</p>';
+					echo '<p>From: ' . $review['id_reviewer'] . '</p>';
+					echo '<p>Score: ' . $review['score'] . '</p>';
+					echo '<p>Comment: ' . $review['comment'] . '</p>';
+					
+					$replies = getReply($db,$review['id_review']);
+					
+					foreach($replies as $reply){
+						echo '<div class="review">';
+							echo '<p>From: ' . $reply['id_replyer'] . '</p>';
+							echo '<p>Reply: ' . $reply['comment'] . '</p>';
+						echo '</div>';
+					}
+					
+					if($_SESSION['id_account'] == $result['id_owner'] || $_SESSION['id_account'] == $review['id_reviewer']){ ?>
+						<form action="action_add_reply.php" class = "big_form" method="post">
+							<fieldset>
+								<legend> Reply </legend>
+								
+								<?php 
+									echo '<input type="hidden" name="id_restaurant" value="' . $review['id_restaurant'] . '">';
+									echo '<input type="hidden" name="id_review" value="' . $review['id_review'] . '">';
+								?>
+								<textArea type="text" class="max_width big_textArea" name="comment"></textArea>
+								<input class="button_1 button" type="submit" value="Send" >
+							</fieldset>
+						</form>
+					<?php
+					}						
+					
 				echo '</div>';
 			}
 		?>
