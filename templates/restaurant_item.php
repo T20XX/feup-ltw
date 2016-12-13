@@ -45,18 +45,23 @@
 	</div>
 	<div id="map"></div>
 	
+	<h2 class="subtitle"> Comments </h2>
+		
+		<?php
+		if($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL){
+				include('review_form.php');
+			}
+		?>
+	
 	<input id="button_comments" class="button_1 button" type="submit" value="Show Comments" >
 	
 	<div id="comments">
-		<h2 class="subtitle"> Comments </h2>
 		
 		<?php
 		
 			$reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
 
-			if($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL){
-				include('review_form.php');
-			}
+			
 			
 			$reviews = getAllReviews($db, $_GET['id']);
 			
@@ -68,15 +73,21 @@
 					
 					$replies = getReply($db,$review['id_review']);
 					
-					foreach($replies as $reply){
-						echo '<div class="review">';
-							echo '<p>From: ' . $reply['id_replyer'] . '</p>';
-							echo '<p>Reply: ' . $reply['comment'] . '</p>';
+					if(sizeof($replies) != 0){
+						echo '<input id="button_reply" class="button_1 button" type="submit" value="Show Replies" >';
+						echo '<div id="replies">';
+						foreach($replies as $reply){
+							echo '<div class="review">';
+								echo '<p>From: ' . $reply['id_replyer'] . '</p>';
+								echo '<p>Reply: ' . $reply['comment'] . '</p>';
+							echo '</div>';
+						}
 						echo '</div>';
 					}
 					
 					if($_SESSION['id_account'] == $result['id_owner'] || $_SESSION['id_account'] == $review['id_reviewer']){ ?>
-						<form action="action_add_reply.php" class = "big_form" method="post">
+						<input id="button_do_reply" class="button_1 button" type="submit" value="Reply" >
+						<form id="reply" action="action_add_reply.php" class = "big_form" method="post">
 							<fieldset>
 								<legend> Reply </legend>
 								

@@ -17,13 +17,42 @@ $(function() {
 
 $(function() {
     $("#button_comments").click(function() {
-		if($("#button_comments").attr("value") == "Show Comments"){
-			$("#button_comments").attr("value","Hide Comments");
-			$("#comments > *").slideDown(1000).fadeIn(1000);
+		if($(this).attr("value") == "Show Comments"){
+			$(this).attr("value","Hide Comments");
+			$(this).next().slideDown(1000).fadeIn(1000);
+			$(this).next().css("display","block");
 		}
 		else{
-			$("#button_comments").attr("value","Show Comments");
-			$("#comments > *").slideUp(1000).fadeOut(1000);
+			$(this).attr("value","Show Comments");
+			$(this).next().slideUp(1000).fadeOut(1000);
+		}
+	});
+});
+
+$(function() {
+    $("#button_reply").click(function() {
+		if($(this).attr("value") == "Show Replies"){
+			$(this).attr("value","Hide Replies");
+			$(this).next().slideDown(1000).fadeIn(1000);
+			$(this).next().css("display","block");
+		}
+		else{
+			$(this).attr("value","Show Replies");
+			$(this).next().slideUp(1000).fadeOut(1000);
+		}
+	});
+});
+
+$(function() {
+    $("#button_do_reply").click(function() {
+		if($(this).attr("value") == "Reply"){
+			$(this).attr("value","Don't Reply");
+			$(this).next().slideDown(1000).fadeIn(1000);
+			$(this).next().css("display","block");
+		}
+		else{
+			$(this).attr("value","Reply");
+			$(this).next().slideUp(1000).fadeOut(1000);
 		}
 	});
 });

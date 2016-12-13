@@ -91,7 +91,15 @@ body {
 	z-index: 1000;
 }
 
-#comments >*{
+#comments{
+	display: none;
+}
+
+#replies{
+	display: none;
+}
+
+#reply{
 	display: none;
 }
 
@@ -147,11 +155,6 @@ fieldset >*{
 
 .subtitle{
 	border-bottom-style: outset;
-}
-
-.info {
-	text-decoration: underline;
-	font-weight: bold;
 }
 
 .simple_list{
