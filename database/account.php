@@ -5,11 +5,8 @@
 		$result = $stmt->fetch();
 		return $result;
 	}
-
 	
-
-	function editAccount($db,$username,$name,$password,$age,$gender){
-		$pass= sha1('$password');
+	function editAccount($db,$username,$name,$age,$gender){
 	$sql="UPDATE Account SET name=?, age=?, gender=? WHERE id_account = '$username'";
 	$stmt=$db->prepare($sql);
 	$stmt->execute(array($name,$age,$gender));

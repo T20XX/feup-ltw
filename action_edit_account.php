@@ -3,8 +3,8 @@
 	include_once('database/account.php');
 	include('templates/session_start.php');
 	$id_account=$_SESSION['id_account'];
-	editAccount($db,$_SESSION['id_account'],$_POST['name'],$_POST['password'],$_POST['age'],$_POST['gender']);
-	$result=	getAccountItem($db, $_SESSION['id_account']);
+	editAccount($db,$_SESSION['id_account'],$_POST['name'],$_POST['age'],$_POST['gender']);
+	$result=getAccountItem($db, $_SESSION['id_account']);
 	session_destroy();
 	session_start();
 		$_SESSION['id_account'] = $result['id_account'];

@@ -112,7 +112,6 @@
       function initMap() {
 
         var geocoder = new google.maps.Geocoder();
-        var restaurant = {lat: -25.363, lng: 131.044};
          var address = document.getElementById('address').innerHTML;
         geocoder.geocode({'address': address}, function(results, status) {
           if (status === 'OK') {

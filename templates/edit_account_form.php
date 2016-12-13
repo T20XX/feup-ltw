@@ -11,9 +11,9 @@
 					<p><label>Name: 
 						<input type="text" class="max_width"name="name" required="required" value=<?php echo $_SESSION['name'] ?>>
 					</label></p>
-					<p><label>Password: 
+					<!-- <p><label>Password: 
 						<input type="password" class="max_width"name="password" required="required">
-					</label></p>
+					</label></p> -->
 					<p><label>Age: 
 						<input type="number" name="age" value=<?php echo $_SESSION['age']?> min="18" max="90" step="1">
 					</label></p>
