@@ -74,7 +74,7 @@
 					$replies = getReply($db,$review['id_review']);
 					
 					if(sizeof($replies) != 0){
-						echo '<input id="button_reply" class="button_1 button" type="submit" value="Show Replies" >';
+						echo '<input class="button_reply button_1 button" type="submit" value="Show Replies" >';
 						echo '<div id="replies">';
 						foreach($replies as $reply){
 							echo '<div class="review">';
@@ -86,7 +86,7 @@
 					}
 					
 					if($_SESSION['id_account'] == $result['id_owner'] || $_SESSION['id_account'] == $review['id_reviewer']){ ?>
-						<input id="button_do_reply" class="button_1 button" type="submit" value="Reply" >
+						<input class="button_1 button button_do_reply" type="submit" value="Reply" >
 						<form id="reply" action="action_add_reply.php" class = "big_form" method="post">
 							<fieldset>
 								<legend> Reply </legend>
