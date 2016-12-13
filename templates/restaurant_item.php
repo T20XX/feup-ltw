@@ -30,19 +30,19 @@
 			
 			
 			
-			if($result['monday']) echo ',<a href="show_weekday.php?day=monday">Monday</a>';
-			if($result['tuesday']) echo ', <a href="show_weekday.php?day=tuesday">Tuesday</a>';
-			if($result['wednesday']) echo ', <a href="show_weekday.php?day=wednesday">Wednesday</a>';
-			if($result['thursday']) echo ',<a href="show_weekday.php?day=thursday"> Thursday</a>';
-			if($result['friday']) echo ',<a href="show_weekday.php?day=friday"> Friday</a>';
-			if($result['saturday']) echo ',<a href="show_weekday.php?day=saturday"> Saturday</a>';
-			if($result['sunday']) echo ',<a href="show_weekday.php?day=sunday"> Sunday</a>';
+			if($result['monday']) echo ', <a class="simple_href" href="show_weekday.php?day=monday">Monday</a>';
+			if($result['tuesday']) echo ', <a class="simple_href" href="show_weekday.php?day=tuesday">Tuesday</a>';
+			if($result['wednesday']) echo ', <a class="simple_href" href="show_weekday.php?day=wednesday">Wednesday</a>';
+			if($result['thursday']) echo ', <a class="simple_href" href="show_weekday.php?day=thursday"> Thursday</a>';
+			if($result['friday']) echo ', <a class="simple_href" href="show_weekday.php?day=friday"> Friday</a>';
+			if($result['saturday']) echo ', <a class="simple_href" href="show_weekday.php?day=saturday"> Saturday</a>';
+			if($result['sunday']) echo ', <a class="simple_href" href="show_weekday.php?day=sunday"> Sunday</a>';
 			echo '</p>';
 			
 			
 			echo '<p> Categories : ';
 			foreach($categories as $category)
-				echo '<a href="show_category.php?category='.$category['id_category'].'">  '. $category['id_category'] .'</a>';
+				echo '<a class="simple_href" href="show_category.php?category='.$category['id_category'].'">  '. $category['id_category'] .'</a> ,';
 			echo '</p>';
 
         foreach($photos as $photo)
@@ -109,7 +109,7 @@
 						echo '<input class="button_reply button_1 button" type="submit" value="Show Replies" >';
 						echo '<div id="replies">';
 						foreach($replies as $reply){
-							echo '<div class="review">';
+							echo '<div class="reply">';
 								echo '<p>From: ' . $reply['id_replyer'] . '</p>';
 								echo '<p>Reply: ' . $reply['comment'] . '</p>';
 							echo '</div>';

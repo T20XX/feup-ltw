@@ -104,6 +104,11 @@ body {
 	text-decoration: none;
 }
 
+.simple_href{
+	color: white;
+	text-decoration: none;
+}
+
 .big_form > *{
 	margin: 30px;
 }
@@ -133,6 +138,13 @@ fieldset >*{
 
 .review {
 	border-style: outset;
+	padding : 1%;
+	margin: 10px;
+}
+
+.reply {
+	border-style: outset;
+	border-radius: 50px;
 	padding : 1%;
 	margin: 10px;
 }

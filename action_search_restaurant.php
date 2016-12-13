@@ -7,7 +7,10 @@
 ?>
 
 	<div id="content">
+		<h1 id="title"> Search Results </h1>
+		<div class="display_big_center">
 <?php
+	
 
 	if($_POST['restaurant_name'] == "")
 		$restaurant_name = '%';
@@ -72,6 +75,7 @@
 			 }
 		
 ?>
+		</div>
 	</div>
 <?php
 	include ('templates/footer.php');
