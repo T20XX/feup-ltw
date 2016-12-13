@@ -40,7 +40,7 @@
 			echo 'photo uploaded';
 
 				//Setup our new file path
-				$newFilePath[$i] = "images/" . $_POST['name'] . "_" . $i ;
+				$newFilePath[$i] = "images/" . $_POST['name'] . "_" . $i . '.' . $imageFileType;
 				//Upload the file into the temp dir
 					if(move_uploaded_file($tmpFilePath, $newFilePath[$i])) {
 			echo 'photo uploaded';

@@ -45,8 +45,10 @@
 				echo '<a class="simple_href" href="show_category.php?category='.$category['id_category'].'">  '. $category['id_category'] .'</a> ,';
 			echo '</p>';
 
-        foreach($photos as $photo)
-            echo '<img id = photo src=' . $photo['path'] . ' alt="Image" width="20%">';
+
+        foreach($photos as $photo) {
+            echo '<img id = photo src="' . $photo['path'] . '" alt="Image" width="20%">';
+        }
 
         echo '<div class="slideshow">';
         echo '<div class="slideshow-container">';
