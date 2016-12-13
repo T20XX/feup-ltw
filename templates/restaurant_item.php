@@ -6,9 +6,15 @@
 			$photos = getRestaurantPhotos($db,$_GET['id']);
 			if($result['id_owner'] == $_SESSION['id_account']){
 				?>
-				<input action="edit_restaurant.php" class="button_1 button" type="submit" value="Edit Restaurant">
-				<input action="action_delete_restaurant.php" class="button_1 button" type="submit" value="Delete Restaurant">
-				<?php
+                <form action="edit_restaurant.php" method="post">
+                    <?php echo '<input type="hidden" name="id" value=' . $_GET['id'] . '>' ?>
+                    <input  class="button_1 button" type="submit" value="Edit Restaurant">
+                </form>
+                <form action="action_delete_restaurant.php" method="post">
+                    <?php echo '<input type="hidden" name="id" value=' . $_GET['id'] . '>' ?>
+				    <input class="button_1 button" type="submit" value="Delete Restaurant">
+                </form>
+                <?php
 			}
 			
 			echo '<h1>' . $result['name'] . '</h1>';

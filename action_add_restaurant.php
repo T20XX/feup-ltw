@@ -62,13 +62,16 @@
 			
 			echo $_POST['avg_price'];
 		
-		addRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['address'], $_POST['description'], $_POST['avg_price'],$_POST['open_time'], $_POST['close_time'],$monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday, NULL);
+		addRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['address'], $_POST['description'], $_POST['avg_price'],$_POST['open_time'], $_POST['close_time'],$monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday);
 		echo 'ok';
 		addCategoriesRestaurant($db, $_POST['name'], $_SESSION['id_account'], $_POST['categories']);
 		addPhotosRestaurant($db, $_POST['name'], $_SESSION['id_account'], $newFilePath);
 
 		echo '<div id="content">';
 		echo '<p> Restaurant added with success!</p>';
+
+		$createdId = getRestaurantId($db,$_POST['name'],$_SESSION['id_account']);
+		header('Location: restaurant_item.php?id=' . $createdId);
 	}else{
 		echo '<div id="content">';
 		echo "Images added to upload excceed the maximum size allowed!";
@@ -82,4 +85,5 @@
 	echo '</div>';
 
 	include ('templates/footer.php');
+
 ?>

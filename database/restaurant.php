@@ -46,10 +46,30 @@
 		$update->execute(array($score,$id));
 	}
 
-	function addRestaurant($db, $name, $owner, $address, $description, $avg_price,$open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $photos){
+	function addRestaurant($db, $name, $owner, $address, $description, $avg_price,$open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday){
 		$stmt = $db->prepare('INSERT INTO Restaurant (stars,id_owner, id_category, name, address, avg_price,description, open_time, close_time, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (0,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
 		$stmt->execute(array($owner, NULL, $name, $address, $avg_price, $description,  $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday));
 	}
+
+function editRestaurant($db, $id, $name,  $address, $description, $avg_price,$open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday){
+    $stmt = $db->prepare('UPDATE Restaurant SET
+      id_category = ?,
+      name = ?,
+      address = ?,
+      avg_price = ?,
+      description = ?,
+      open_time = ?,
+      close_time = ?,
+      monday = ?,
+      tuesday = ?,
+      wednesday = ?,
+      thursday = ?,
+      friday = ?,
+      saturday = ?,
+      sunday = ?
+      WHERE id_restaurant = ?');
+    $stmt->execute(array(NULL, $name, $address, $avg_price, $description,  $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $id));
+}
 	
 	function addCategoriesRestaurant($db,$name,$owner,$categories){
 		$id_restaurant = getRestaurantId($db,$name,$owner);
@@ -104,21 +124,28 @@
 	function deleteRestaurant($db,$id_restaurant){
 		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_restaurant = ?');
 		$stmt->execute(array($id_restaurant));
-		$stmt = $db->prepare('DELETE FROM RestaurantFood WHERE id_restaurant = ?');
-		$stmt->execute(array($id_restaurant));
+        deleteRestaurantFoodByIdRestaurant($db,$id_restaurant);
 		$stmt = $db->prepare('DELETE FROM Review WHERE id_restaurant = ?');
 		$stmt->execute(array($id_restaurant));
-		$stmt= $db-> prepare('SELECT path FROM Photo WHERE id_restaurant=?');
-		$stmt->execute(array($id_restaurant));
-		$result=$stmt->fetchAll();
-		foreach($result as $row){
-			unlink($row['path']);
-		}
-		$stmt = $db->prepare('DELETE FROM Photo WHERE id_restaurant = ?');
-		$stmt->execute(array($id_restaurant));
-		
-		
+        deletePhotosByIdRestaurant($db,$id_restaurant);
+
 	}
+
+    function deleteRestaurantFoodByIdRestaurant($db,$id_restaurant){
+        $stmt = $db->prepare('DELETE FROM RestaurantFood WHERE id_restaurant = ?');
+        $stmt->execute(array($id_restaurant));
+    }
+
+function deletePhotosByIdRestaurant($db,$id_restaurant){
+    $stmt = $db->prepare('SELECT path FROM Photo WHERE id_restaurant=?');
+    $stmt->execute(array($id_restaurant));
+    $result = $stmt->fetchAll();
+    foreach ($result as $row) {
+        unlink($row['path']);
+    }
+    $stmt = $db->prepare('DELETE FROM Photo WHERE id_restaurant = ?');
+    $stmt->execute(array($id_restaurant));
+}
 	
 	function findRestaurantFood($db, $restaurant){
 		$stmt= $db-> prepare('SELECT id_category FROM RestaurantFood WHERE id_restaurant=?');
