@@ -57,6 +57,7 @@
 	<h2 class="subtitle"> Comments </h2>
 		
 		<?php
+        $reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
 		if($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL){
 				include('review_form.php');
 			}
@@ -67,11 +68,6 @@
 	<div id="comments">
 		
 		<?php
-		
-			$reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
-
-			
-			
 			$reviews = getAllReviews($db, $_GET['id']);
 			
 			foreach($reviews as $review){

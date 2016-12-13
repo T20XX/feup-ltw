@@ -125,8 +125,7 @@ function editRestaurant($db, $id, $name,  $address, $description, $avg_price,$op
 		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_restaurant = ?');
 		$stmt->execute(array($id_restaurant));
         deleteRestaurantFoodByIdRestaurant($db,$id_restaurant);
-		$stmt = $db->prepare('DELETE FROM Review WHERE id_restaurant = ?');
-		$stmt->execute(array($id_restaurant));
+        deleteReviewsAndRepliesByIdRestaurant($db,$id_restaurant);
         deletePhotosByIdRestaurant($db,$id_restaurant);
 
 	}
@@ -135,6 +134,17 @@ function editRestaurant($db, $id, $name,  $address, $description, $avg_price,$op
         $stmt = $db->prepare('DELETE FROM RestaurantFood WHERE id_restaurant = ?');
         $stmt->execute(array($id_restaurant));
     }
+function deleteReviewsAndRepliesByIdRestaurant($db,$id_restaurant){
+    $stmt = $db->prepare('SELECT id_review FROM Review WHERE id_restaurant = ?');
+    $stmt->execute(array($id_restaurant));
+    $result = $stmt->fetchAll();
+    foreach ($result as $row) {
+        $stmt = $db->prepare('DELETE FROM Reply WHERE id_review = ?');
+        $stmt->execute(array($row['id_review']));
+    }
+    $stmt = $db->prepare('DELETE FROM Review WHERE id_restaurant = ?');
+    $stmt->execute(array($id_restaurant));
+}
 
 function deletePhotosByIdRestaurant($db,$id_restaurant){
     $stmt = $db->prepare('SELECT path FROM Photo WHERE id_restaurant=?');
