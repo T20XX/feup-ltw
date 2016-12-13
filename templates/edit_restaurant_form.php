@@ -17,7 +17,7 @@ $result = getRestaurantItem($db, array($_POST['id']));
                             <!-- <input type="text" class="max_width" name="address" required="required"> -->
                         </label></p>
                     <p><label>Average Price: </label></p>
-                    <input type="number" value="10" min="1" max="200" step="1" name="avg_price" value="<?php echo $result['avg_price']?>">
+                    <input type="number" min="1" max="200" step="1" name="avg_price" value="<?php echo $result['avg_price']?>">
                     <p><label>Description:</label></p>
 					<textarea type="text" class="max_width" name="description" required="required"><?php echo $result['description']?></textarea>
 				</fieldset>
