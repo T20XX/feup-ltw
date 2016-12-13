@@ -93,8 +93,31 @@
 	}
 	
 	function deleteRestaurants($db,$username){
-		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_owner = ?');
+		$stmt = $db->prepare('SELECT id_restaurant FROM Restaurant WHERE id_owner = ?');
 		$stmt->execute(array($username));
+		$result=$stmt->fetchAll();
+		foreach($result as $row){
+			deleteRestaurant($db, $row['id_restaurant']);
+		}
+	}
+
+	function deleteRestaurant($db,$id_restaurant){
+		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_restaurant = ?');
+		$stmt->execute(array($id_restaurant));
+		$stmt = $db->prepare('DELETE FROM RestaurantFood WHERE id_restaurant = ?');
+		$stmt->execute(array($id_restaurant));
+		$stmt = $db->prepare('DELETE FROM Review WHERE id_restaurant = ?');
+		$stmt->execute(array($id_restaurant));
+		$stmt= $db-> prepare('SELECT path FROM Photo WHERE id_restaurant=?');
+		$stmt->execute(array($id_restaurant));
+		$result=$stmt->fetchAll();
+		foreach($result as $row){
+			unlink($row['path']);
+		}
+		$stmt = $db->prepare('DELETE FROM Photo WHERE id_restaurant = ?');
+		$stmt->execute(array($id_restaurant));
+		
+		
 	}
 	
 	function findRestaurantFood($db, $restaurant){
