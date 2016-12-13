@@ -6,9 +6,15 @@
 			$photos = getRestaurantPhotos($db,$_GET['id']);
 			if($result['id_owner'] == $_SESSION['id_account']){
 				?>
-				<input action="edit_restaurant.php" class="button_1 button" type="submit" value="Edit Restaurant">
-				<input action="action_delete_restaurant.php" class="button_1 button" type="submit" value="Delete Restaurant">
-				<?php
+                <form action="edit_restaurant.php" method="post">
+                    <?php echo '<input type="hidden" name="id" value=' . $_GET['id'] . '>' ?>
+                    <input  class="button_1 button" type="submit" value="Edit Restaurant">
+                </form>
+                <form action="action_delete_restaurant.php" method="post">
+                    <?php echo '<input type="hidden" name="id" value=' . $_GET['id'] . '>' ?>
+				    <input class="button_1 button" type="submit" value="Delete Restaurant">
+                </form>
+                <?php
 			}
 			
 			echo '<h1>' . $result['name'] . '</h1>';
@@ -51,6 +57,7 @@
 	<h2 class="subtitle"> Comments </h2>
 		
 		<?php
+        $reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
 		if($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL){
 				include('review_form.php');
 			}
@@ -61,11 +68,6 @@
 	<div id="comments">
 		
 		<?php
-		
-			$reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
-
-			
-			
 			$reviews = getAllReviews($db, $_GET['id']);
 			
 			foreach($reviews as $review){

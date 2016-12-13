@@ -3,7 +3,7 @@
 		<div>
 			<form action="action_add_restaurant.php" class="big_form" method="post" enctype="multipart/form-data" > <!-- onsubmit="return mySubmitFunction()"> -->
 				<fieldset>
-					<legend>Opening Hours</legend>
+					<legend>General Information</legend>
 					<p><label>Name: 
 						<input type="text" class="max_width" name="name" required="required">
 					</label></p>
