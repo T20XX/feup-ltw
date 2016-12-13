@@ -25,7 +25,6 @@ CREATE TABLE Restaurant (
 	id_restaurant INTEGER PRIMARY KEY AUTOINCREMENT,
 	id_owner INTEGER REFERENCES Account(id_account),
 	--id_functionTime INTEGER REFERENCES FunctionTime(id_functionTime),
-	id_category VARCHAR REFERENCES Category(id_category),
 	name VARCHAR NOT NULL,
 	address VARCHAR NOT NULL,
 	avg_price INTEGER NOT NULL,
