@@ -20,19 +20,22 @@
 			echo '<h3> Average Price : ' . $result['avg_price'] . '</h3>';
 			
 			echo '<p> Function Time : from ' . $result['open_time'] . ' to ' . $result['close_time'];
-			if($result['monday']) echo ', Monday';
-			if($result['tuesday']) echo ', Tuesday';
-			if($result['wednesday']) echo ', Wednesday';
-			if($result['thursday']) echo ', Thursday';
-			if($result['friday']) echo ', Friday';
-			if($result['saturday']) echo ', Saturday';
-			if($result['sunday']) echo ', Sunday';
+			
+			
+			
+			if($result['monday']) echo ',<a href="show_weekday.php?day=monday">Monday</a>';
+			if($result['tuesday']) echo ', <a href="show_weekday.php?day=tuesday">Tuesday</a>';
+			if($result['wednesday']) echo ', <a href="show_weekday.php?day=wednesday">Wednesday</a>';
+			if($result['thursday']) echo ',<a href="show_weekday.php?day=thursday"> Thursday</a>';
+			if($result['friday']) echo ',<a href="show_weekday.php?day=friday"> Friday</a>';
+			if($result['saturday']) echo ',<a href="show_weekday.php?day=saturday"> Saturday</a>';
+			if($result['sunday']) echo ',<a href="show_weekday.php?day=sunday"> Sunday</a>';
 			echo '</p>';
 			
 			
 			echo '<p> Categories : ';
 			foreach($categories as $category)
-				echo $category['id_category'] . '  ';
+				echo '<a href="show_category.php?category='.$category['id_category'].'">  '. $category['id_category'] .'</a>';
 			echo '</p>';
 
 			echo '<p> Photos : <br>';

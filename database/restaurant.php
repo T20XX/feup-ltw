@@ -126,4 +126,13 @@
 		$result=$stmt->fetchAll();
 		return $result;
 	}
+	
+	function getRestaurantDay($db,$day){
+
+		$stmt=$db->prepare('SELECT * FROM Restaurant WHERE '.$day.'=1');
+		$stmt->execute();
+		$result=$stmt->fetchAll();
+		return $result;
+		
+	}
  ?>
