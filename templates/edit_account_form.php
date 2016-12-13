@@ -2,6 +2,9 @@
 		<h1> Edit Account </h1>
 		
 			<form action="action_edit_account.php" class = "big_form" method="post">
+			
+			<!-- Name, Age, Gender -->
+			
 				<fieldset>
 					<legend> Account Information </legend>
 					<h3> <?php echo $_SESSION['id_account'] ?> </h3>

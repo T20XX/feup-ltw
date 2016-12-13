@@ -1,7 +1,13 @@
 <div id="content">
+
 		<h1 class="title"> Advanced Search </h1>
+		
 		<div>
+		
 			<form class="big_form" action="action_search_restaurant.php" method="post">
+			
+			<!-- Name or Price or Minimum Stars -->
+			
 				<fieldset>
 					<legend> General Information </legend>
 					<p><label>Restaurant Name: 
@@ -17,6 +23,8 @@
 					</label></p>
 				</fieldset>
 
+			<!-- Function Time -->
+		
 				<fieldset>
 				
 					<legend> Function Time </legend>
@@ -34,7 +42,10 @@
 					</ul>
 				</fieldset>
 				
+			<!-- Categories -->
+				
 				<fieldset>
+				
 					<legend> Categories </legend>
 					
 					<ul class="simple_list">

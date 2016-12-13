@@ -1,6 +1,10 @@
 <?php
 	include_once('database/connection.php');
+
     include_once('database/account.php');
+    /*
+	Check if account exists
+	*/
 	if (($result = userValidLogIn($db, $_POST['username'], $_POST['password'])) != null){
 	    session_start();
 		$_SESSION['id_account'] = $result['id_account'];

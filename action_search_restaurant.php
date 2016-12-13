@@ -11,6 +11,13 @@
 		<div class="display_big_center">
 <?php
 	
+	/*
+	Ignores input text that are blanck and all the checkboxes are checked
+	If atleast one of the restaurants has that checkbox category/function_day then it will 
+	The stars param defines the bottom limit of the restaurant rating
+	The Average Price defines the top limit of the restaurant avg price
+	The start and end time are 00:00 - 23:00 by default
+	*/
 
 	if($_POST['restaurant_name'] == "")
 		$restaurant_name = '%';

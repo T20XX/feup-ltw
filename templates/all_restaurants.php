@@ -1,4 +1,5 @@
 <div id="content">
+
 	<h1 class="title"> All Restaurants </h1>
 	<div class="display_big_center">
 		<?php
@@ -10,4 +11,5 @@
 			 }
 		?>
 	</div>
+	
 </div>

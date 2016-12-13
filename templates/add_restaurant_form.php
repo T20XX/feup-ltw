@@ -1,7 +1,14 @@
 	<div id="content">
+	
 		<h1> Create Restaurant </h1>
+		
 		<div>
+			
 			<form action="action_add_restaurant.php" class="big_form" method="post" enctype="multipart/form-data" > <!-- onsubmit="return mySubmitFunction()"> -->
+			
+			<!-- Name, Address (with geocode API), average price and description -->
+			
+			
 				<fieldset>
 					<legend>General Information</legend>
 					<p><label>Name: 
@@ -16,6 +23,8 @@
 					<p><label>Description:</label></p>
 					<textarea type="text" class="max_width bit_textArea" name="description" required="required"></textarea>
 				</fieldset>
+				
+			<!-- Function Time -->
 
 				<fieldset>
 					<legend>Opening Hours</legend>
@@ -31,6 +40,9 @@
 						<li><input class="group1" name="days[]" type="checkbox" checked="checked" value="sunday">Sunday</li>
 					</ul>
 				</fieldset>
+				
+			<!-- Categories -->
+			
 				<fieldset>
 					<legend> Categories </legend>
 					
@@ -49,14 +61,19 @@
 					?>
 					</ul>
 				</fieldset>
+				
+			<!-- Image Uploads -->
+			
 				<fieldset>
 					<legend> Images Upload </legend>
 					<input type="file" name="upload[]" multiple>
         		</fieldset>
+				
 				<input type="submit" id="submit_button" class="button_1 button" value="Create restaurant"/>
 			</form>
 		</div>
 	</div>
+	
 	    <script>
       function initMap() {
         
