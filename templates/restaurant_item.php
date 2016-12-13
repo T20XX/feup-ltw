@@ -4,6 +4,7 @@
 			$result = getRestaurantItem($db, array($_GET['id']));
 			$categories = getRestaurantFood($db,$_GET['id']);
 			$photos = getRestaurantPhotos($db,$_GET['id']);
+            $totalPhotos = count($photos);
 			if($result['id_owner'] == $_SESSION['id_account']){
 				?>
                 <form action="edit_restaurant.php" method="post">
@@ -44,12 +45,38 @@
 				echo '<a href="show_category.php?category='.$category['id_category'].'">  '. $category['id_category'] .'</a>';
 			echo '</p>';
 
-			echo '<p> Photos : <br>';
-			foreach($photos as $photo)
-				echo '<img src=' . $photo['path'] . ' alt="Image" width="20%">';
-			echo '</p>';
-				
+        foreach($photos as $photo)
+            echo '<img id = photo src=' . $photo['path'] . ' alt="Image" width="20%">';
+
+        echo '<div class="slideshow">';
+        echo '<div class="slideshow-container">';
+            $counterPhotos = 1;
+            foreach($photos as $photo){
+
+                echo '<div class="mySlides fade">';
+                echo '<div class="numbertext">' . $counterPhotos .'/' . $totalPhotos .'</div>';
+                echo '<img id="slideshow_content" src="' . $photo['path'] . '" style="width:100%">';
+                echo '</div>';
+                $counterPhotos++;
+			}
 		?>
+        <a id="slideshow_content" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a id="slideshow_content" class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <?php
+            $counterPhotos = 1;
+            foreach($photos as $photo){
+                echo '<span id="slideshow_content" class="dot" onclick="currentSlide(' . $counterPhotos . ')"></span>';
+                $counterPhotos++;
+            }
+            ?>
+        </div>
+</div>
+				
+
 
 	</div>
 	<div id="map"></div>

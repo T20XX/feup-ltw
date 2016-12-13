@@ -53,7 +53,19 @@ $(document).click(function(e) {
 				$("#loginform").css("display", "none");
 		});
     }
+
+    if(e.target.id == 'photo'){
+        $(".slideshow").slideDown(1000).fadeIn(1000);
+        $(".slideshow").css("display", "block");
+    }
+    else if (e.target.id != 'photo' && e.target.id != 'slideshow_content') {
+        $(".slideshow").slideUp(1000).fadeOut(1000);
+        $(".slideshow").promise().done(function(){
+            $(".slideshow").css("display", "none");
+        });
+    }
 });
+
 
 /*
 For the top button to appear if the page is down
@@ -85,4 +97,5 @@ $(window).load(function(){
             scrollTop: 0
         }, 700);
     });
+    showSlides(slideIndex);
 });
