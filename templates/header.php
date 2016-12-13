@@ -14,10 +14,14 @@
 			
 			<h1> Table for Two </h1>
 			
+			<!-- Live Search Bar -->
+			
 			<div id="search_bar">
 				<input type="text" name="search">
 				<input type="submit" class="button_search button" value=""/>
 			</div>
+			
+			<!-- Menu Options -->
 			
 			<div id="menu">
 				<ul>
@@ -26,13 +30,18 @@
 					<li><input id="go_advanced_search" class="header_button button" action="advanced_search.php" type="submit" value="Advanced Search" /> </li>
 					<li><input id="go_information" class="header_button button" action="information.php" type="submit" value="Information" /></li>
 					<?php
+					/*Session Started*/
 					if (isset($_SESSION['id_account'])){
+						
+						/*Owner ?*/
 						if($_SESSION['type'] == 'owner')
 								echo '<li><input id="go_my_restaurants" class="header_button button" action="my_restaurants.php" type="submit" value="My Restaurants" /></li>';
+						/*Reviewer?*/
 						else
 								echo '<li><input id="go_my_favorite" class="header_button button" action="my_favorite.php" type="submit" value="My Favorite" /></li>';
 						echo '<li><input id="go_my_account" class="header_button button" action="my_account.php" type="submit" value="' . $_SESSION['name'] .'" /></li>';
 						echo '<li><input id="do_logout" class="header_button button" action="action_logout.php" type="submit" value="Logout" /></li>';
+					
 					}
 					else{
 						echo '<li><input id="do_login" class="header_button button" type="submit" value="Login" /></li>';
@@ -41,6 +50,8 @@
 					?>
 				</ul>
 			</div>
+			
+			<!-- Login Form -->
 			
 			<form id="loginform" class="small_form" method="post" action="action_login.php">
 				<label id="loginform_content" for="username">Username</label>

@@ -6,7 +6,13 @@ $result = getRestaurantItem($db, array($_POST['id']));
 		<h1> Edit Restaurant </h1>
 		<div>
 			<form action="action_edit_restaurant.php" class="big_form" method="post" enctype="multipart/form-data">
-                    <input type="hidden" class="max_width" name="id" required="required" value="<?php echo $_POST['id']?>">
+                
+			<!-- To prevent $_GET information to pass from php to php -->
+				
+				<input type="hidden" class="max_width" name="id" required="required" value="<?php echo $_POST['id']?>">	
+				
+			<!-- Name,Adress,Average Price, Description -->	
+				
 				<fieldset>
 					<legend>General Information</legend>
 					<p><label>Name: 
@@ -21,6 +27,8 @@ $result = getRestaurantItem($db, array($_POST['id']));
                     <p><label>Description:</label></p>
 					<textarea type="text" class="max_width" name="description" required="required"><?php echo $result['description']?></textarea>
 				</fieldset>
+				
+			<!-- Function Time - Checkes the boxes of the weekdays that are checked for the restaurant -->
 
 				<fieldset>
 					<legend>Opening Hours</legend>
@@ -50,6 +58,9 @@ $result = getRestaurantItem($db, array($_POST['id']));
                             >Sunday</li>
 					</ul>
 				</fieldset>
+				
+			<!-- Categories - Checkes the boxes of the categories that are checked for the restaurant -->
+				
 				<fieldset>
 					<legend> Categories </legend>
 					
@@ -72,11 +83,15 @@ $result = getRestaurantItem($db, array($_POST['id']));
 					?>
 					</ul>
 				</fieldset>
+				
+			<!-- Uplocad Images - It will override the existing ones -->
+				
 				<fieldset>
 					<legend> Images Upload </legend>
                     <p>The photos inserted will override the existing ones, please make sure to upload all the photos you want to appear or upload none if you want to keep the existing ones.</p>
 					<input type="file" name="upload[]" multiple>
 				</fieldset>
+				
 				<input type="submit" class="button_1 button" value="Edit restaurant" />
 			</form>
 		</div>

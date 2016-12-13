@@ -1,4 +1,5 @@
 <div id="content">
+
 	<h1 class="title"> My Restaurants </h1>
 	<input id="button_add_restaurant" action="add_restaurant.php" class="button_1 button" type="submit" value="Add Restaurant">
 	<div class = "display_big_center">
@@ -10,4 +11,5 @@
 			 }
 	?>
 	</div>
+	
 </div>

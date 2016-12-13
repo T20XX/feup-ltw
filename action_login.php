@@ -3,6 +3,10 @@
 	$stmt = $db->prepare('SELECT id_account, name, type, age, gender FROM Account WHERE id_account = ? AND pass = ?');
 	$stmt->execute(array($_POST['username'],sha1($_POST['password'])));
 	$result = $stmt->fetch();
+	
+	/*
+	Check if account exists
+	*/
 	if ($result != null){
 		session_start();
 		$_SESSION['id_account'] = $result['id_account'];

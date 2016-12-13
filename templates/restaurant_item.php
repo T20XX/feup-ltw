@@ -5,6 +5,11 @@
 			$categories = getRestaurantFood($db,$_GET['id']);
 			$photos = getRestaurantPhotos($db,$_GET['id']);
             $totalPhotos = count($photos);
+			
+			/*
+			For Restaurant management
+			*/
+				
 			if($result['id_owner'] == $_SESSION['id_account']){
 				?>
                 <form action="edit_restaurant.php" method="post">
@@ -18,17 +23,18 @@
                 <?php
 			}
 			
-			echo '<h1>' . $result['name'] . '</h1>';
+			/*
+			Restaurant Information Session
+			*/
+			
+			echo '<h1 class="subtitle">' . $result['name'] . '</h1>';
 			echo '<h3> Rating : ' . $result['stars'] . '</h3>';
 			echo '<h3 id="address"> Address : ' . $result['address'] . '</h3>';
 			echo '<h3> Description :</h3>';
 			echo '<p>' . $result['description'] . '</p>';
-			
 			echo '<h3> Average Price : ' . $result['avg_price'] . '</h3>';
 			
 			echo '<p> Function Time : from ' . $result['open_time'] . ' to ' . $result['close_time'];
-			
-			
 			
 			if($result['monday']) echo ', <a class="simple_href" href="show_weekday.php?day=monday">Monday</a>';
 			if($result['tuesday']) echo ', <a class="simple_href" href="show_weekday.php?day=tuesday">Tuesday</a>';
@@ -39,65 +45,79 @@
 			if($result['sunday']) echo ', <a class="simple_href" href="show_weekday.php?day=sunday"> Sunday</a>';
 			echo '</p>';
 			
-			
 			echo '<p> Categories : ';
 			foreach($categories as $category)
 				echo '<a class="simple_href" href="show_category.php?category='.$category['id_category'].'">  '. $category['id_category'] .'</a> ,';
 			echo '</p>';
 
-
-        foreach($photos as $photo) {
-            echo '<img id = photo src="' . $photo['path'] . '" alt="Image" width="20%">';
-        }
-
-        echo '<div class="slideshow">';
-        echo '<div class="slideshow-container">';
-            $counterPhotos = 1;
-            foreach($photos as $photo){
-
-                echo '<div class="mySlides fade">';
-                echo '<div class="numbertext">' . $counterPhotos .'/' . $totalPhotos .'</div>';
-                echo '<img id="slideshow_content" src="' . $photo['path'] . '" style="width:100%">';
-                echo '</div>';
-                $counterPhotos++;
-			}
-		?>
-        <a id="slideshow_content" class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a id="slideshow_content" class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <div style="text-align:center">
-            <?php
-            $counterPhotos = 1;
-            foreach($photos as $photo){
-                echo '<span id="slideshow_content" class="dot" onclick="currentSlide(' . $counterPhotos . ')"></span>';
-                $counterPhotos++;
-            }
-            ?>
-        </div>
-</div>
+			/*
+			Photos Session - displayed inline with slideShow if clicked
+			*/
 				
+			echo '<h2 class="subtitle"> Photos </h2>';
+			
+			foreach($photos as $photo) {
+				echo '<img id = photo src="' . $photo['path'] . '" alt="Image" width="20%">';
+			}
 
+			echo '<div class="slideshow">';
+			echo '<div class="slideshow-container">';
+				$counterPhotos = 1;
+				foreach($photos as $photo){
 
+					echo '<div class="mySlides fade">';
+					echo '<div class="numbertext">' . $counterPhotos .'/' . $totalPhotos .'</div>';
+					echo '<img id="slideshow_content" src="' . $photo['path'] . '" style="width:100%">';
+					echo '</div>';
+					$counterPhotos++;
+				}
+			?>
+				<a id="slideshow_content" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a id="slideshow_content" class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+
+			<div style="text-align:center">
+				<?php
+				$counterPhotos = 1;
+				foreach($photos as $photo){
+					echo '<span id="slideshow_content" class="dot" onclick="currentSlide(' . $counterPhotos . ')"></span>';
+					$counterPhotos++;
+				}
+				?>
+			</div>
+		</div>
 	</div>
+
+	<!-- Location with Google Maps API -->
+	
+	<h2 class="subtitle"> Location </h2>
 	<div id="map"></div>
 	
+	<!-- Comments Session -->
+	
 	<h2 class="subtitle"> Comments </h2>
-		
 		<?php
+		/*
+			To know if the reviewer already left a review (just once)
+		*/		
         $reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
 		if($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL){
 				include('review_form.php');
 			}
 		?>
 	
-	<input id="button_comments" class="button_1 button" type="submit" value="Show Comments" >
+	<!-- All Comments -->
 	
+	<input id="button_comments" class="button_1 button" type="submit" value="Show Comments" >
 	<div id="comments">
 		
 		<?php
 			$reviews = getAllReviews($db, $_GET['id']);
+			
+			/*
+			Display all reviews
+			*/
 			
 			foreach($reviews as $review){
 				echo '<div class="review">';
@@ -110,6 +130,11 @@
 					if(sizeof($replies) != 0){
 						echo '<input class="button_reply button_1 button" type="submit" value="Show Replies" >';
 						echo '<div id="replies">';
+						
+						/*
+						Display all replies
+						*/
+						
 						foreach($replies as $reply){
 							echo '<div class="reply">';
 								echo '<p>From: ' . $reply['id_replyer'] . '</p>';
@@ -119,6 +144,9 @@
 						echo '</div>';
 					}
 					
+					/*
+					If review or the restaurant belongs to the account, then it can leaves a reply
+					*/
 					if($_SESSION['id_account'] == $result['id_owner'] || $_SESSION['id_account'] == $review['id_reviewer']){ ?>
 						<input class="button_1 button button_do_reply" type="submit" value="Reply" >
 						<form id="reply" action="action_add_reply.php" class = "big_form" method="post">
@@ -142,6 +170,9 @@
 	</div>
 	
 </div>
+
+<!-- SCRIPT for Google Maps -->
+
 <script>
       function initMap() {
 

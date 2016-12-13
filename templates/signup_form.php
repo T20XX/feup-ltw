@@ -1,6 +1,11 @@
 	<div id="content">
+	
 			<h1 class="title"> Sign Up </h1>
+			
 			<form action="action_signup.php" class="big_form" method="post">
+			
+			<!-- Username, Name, Password, Age, Gender , Type -->
+			
 				<fieldset>
 					<legend>Account Information</legend>
 					<p><label>Username: 
@@ -26,6 +31,8 @@
 						<input type="radio" name="type" value="owner">Owner
 					</div>
 				</fieldset>
+				
 				<input class= "button_1 button" type="submit" value="Register"/>
+				
 			</form>
 	</div>
