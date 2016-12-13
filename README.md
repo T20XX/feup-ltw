@@ -9,9 +9,6 @@
 #### Search
 - search bar procura pelo nome do restaurante aproximadamente -> http://www.w3schools.com/php/php_ajax_livesearch.asp
 
-#### Photos
-- Slide show com as fotografias -> http://www.w3schools.com/howto/howto_js_slideshow.asp
-
 #### Reply/Review
 - Fazer link do username para a sua página de perfil
 - Fazer em javascript a introdução de replies/reviews de forma a que apareçam de imediato sem ir para outra página
