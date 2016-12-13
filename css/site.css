@@ -91,15 +91,7 @@ body {
 	z-index: 1000;
 }
 
-#comments{
-	display: none;
-}
-
-#replies{
-	display: none;
-}
-
-#reply{
+#comments, #replies, #reply{
 	display: none;
 }
 

@@ -20,7 +20,6 @@ $(function() {
 		if($(this).attr("value") == "Show Comments"){
 			$(this).attr("value","Hide Comments");
 			$(this).next().slideDown(1000).fadeIn(1000);
-			$(this).next().css("display","block");
 		}
 		else{
 			$(this).attr("value","Show Comments");
@@ -30,11 +29,10 @@ $(function() {
 });
 
 $(function() {
-    $("#button_reply").click(function() {
+    $(".button_reply").click(function() {
 		if($(this).attr("value") == "Show Replies"){
 			$(this).attr("value","Hide Replies");
 			$(this).next().slideDown(1000).fadeIn(1000);
-			$(this).next().css("display","block");
 		}
 		else{
 			$(this).attr("value","Show Replies");
@@ -44,11 +42,10 @@ $(function() {
 });
 
 $(function() {
-    $("#button_do_reply").click(function() {
+    $(".button_do_reply").click(function() {
 		if($(this).attr("value") == "Reply"){
 			$(this).attr("value","Don't Reply");
 			$(this).next().slideDown(1000).fadeIn(1000);
-			$(this).next().css("display","block");
 		}
 		else{
 			$(this).attr("value","Reply");

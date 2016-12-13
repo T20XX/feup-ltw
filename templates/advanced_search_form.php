@@ -20,7 +20,7 @@
 				<fieldset>
 				
 					<legend> Function Time </legend>
-					Hours: <input type="time" value='00:00'> - <input type="time" value = '23:59'><br><br>
+					Hours: <input name="start_time" type="time" value='00:00'> - <input name = "end_time" type="time" value = '23:59'><br><br>
 					
 					<ul class="simple_list">					
 						<li><input class="select_all" type="checkbox" checked="checked" data-group=".group1">All Checked<br><br></li>
@@ -47,7 +47,7 @@
 					$result = getAllCategories($db);
 					
 					foreach( $result as $row) {
-						echo '<li><input class="group2" name="check[]" type="checkbox" name="categories" checked="checked" value="' . $row['id_category'] . '">' . $row['id_category'] .'<br></li>';
+						echo '<li><input class="group2" name="categories[]" type="checkbox" checked="checked" value="' . $row['id_category'] . '">' . $row['id_category'] .'<br></li>';
 					 }
 					?>
 					</ul>

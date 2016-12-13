@@ -96,4 +96,11 @@
 		$stmt = $db->prepare('DELETE FROM Restaurant WHERE id_owner = ?');
 		$stmt->execute(array($username));
 	}
+	
+	function findRestaurantFood($db, $restaurant){
+		$stmt= $db-> prepare('SELECT id_category FROM RestaurantFood WHERE id_restaurant=?');
+		$stmt->execute(array($restaurant));
+		$result=$stmt->fetchAll();
+		return $result;
+	}
  ?>
