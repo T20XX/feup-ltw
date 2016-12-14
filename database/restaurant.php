@@ -14,6 +14,13 @@
 		return $result;
 	}
 
+    function getAllRestaurantsName($db){
+    $stmt = $db->prepare('SELECT id_restaurant, name FROM Restaurant');
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}
+
 	function getAllRestaurantsFromOwner($db, $owner){
 		$stmt = $db->prepare('SELECT * FROM Restaurant WHERE id_owner = ?');
 		$stmt->execute(array($owner));

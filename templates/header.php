@@ -17,7 +17,14 @@
 			<!-- Live Search Bar -->
 			
 			<div id="search_bar">
-				<input type="text" name="search">
+				<input type="text" id="search" name="search" size="30" onkeyup="showResult(this.value)">
+				<div id="livesearch">
+                    <a id="livesearch[0]" href=""></a><br>
+                    <a id="livesearch[1]" href=""></a><br>
+                    <a id="livesearch[2]" href=""></a><br>
+                    <a id="livesearch[3]" href=""></a><br>
+                    <a id="livesearch[4]" href=""></a>
+                </div>
 				<input type="submit" class="button_search button" value=""/>
 			</div>
 			

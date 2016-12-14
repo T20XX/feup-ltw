@@ -5,6 +5,12 @@ $(function() {
    $( document ).ready(function() {
 		$("#content").slideDown(1000).fadeIn(1000);
 		$("#content").css("display", "block");
+       $("#search_bar").focusin(function() {
+           $("#livesearch").css("display", "block");
+       });
+       $("#search_bar").focusout(function() {
+           $("#livesearch").css("display", "none");
+       });
 	});
 });
 
@@ -99,3 +105,37 @@ $(window).load(function(){
     });
     showSlides(slideIndex);
 });
+
+/*
+Search bar results
+*/
+function showResult(str) {
+  if (str.length==0) { 
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+    $.ajax({
+        type: "post",
+        url: "quick_search.php",
+        data: {"search_string" : str},
+        dataType: "json",
+    }).done(function(data) {
+        // Request completed
+        var livesearchDiv = document.getElementById("livesearch");
+        for(var i = 0; i < data.length; i++){
+            document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+            if(i < 5) {
+                var item = document.getElementById("livesearch[" + i + "]");
+                item.setAttribute('href', "restaurant_item.php?id=" + data[i]['id_restaurant']);
+                item.innerHTML = data[i]['name'];
+            }else{
+                break;
+            }
+    }
+
+    }).fail(function() {
+        // Request failed
+    });
+}
+

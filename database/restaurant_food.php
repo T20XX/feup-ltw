@@ -13,12 +13,12 @@
 		return $result;
 	}
 	
-	/*function getAllCategories($db,$restaurant){
+function getAllCategoriesFromRestaurant($db,$restaurant){
 		$stmt = $db->prepare('SELECT id_category FROM RestaurantFood WHERE id_restaurant=?');
 		$stmt->execute(array($restaurant));
 		$result = array();
 		while($row = $stmt->fetch())
 		$result[] = $row['id_category'];
 		return $result;
-	}*/
+	}
 ?>
