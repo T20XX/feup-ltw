@@ -25,7 +25,7 @@
                     <a id="livesearch[3]" href=""></a><br>
                     <a id="livesearch[4]" href=""></a>
                 </div>
-				<input type="submit" class="button_search button" value=""/>
+				<!-- <input type="submit" class="button_search button" value=""/> -->
 			</div>
 			
 			<!-- Menu Options -->
