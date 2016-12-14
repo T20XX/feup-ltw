@@ -6,6 +6,6 @@
 - Path Traversal Attack - 8
 - Account Lockout - 18
 - Cross-site Scripting - 21
-- Session Fixation - 62
+- Session Fixation - 62 (ja adicionei o session_regenrate_id)
 - Sessions in PHP ? - 68
 - outros
