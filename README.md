@@ -1,8 +1,5 @@
 # LTW1
 
-#### Search
-- search bar procura pelo nome do restaurante aproximadamente -> http://www.w3schools.com/php/php_ajax_livesearch.asp
-
 #### Segurança (PRIORIDADE) -> https://web.fe.up.pt/~arestivo/presentation/security/#1
 - expressões regulares -> https://web.fe.up.pt/~arestivo/presentation/regexp/#1
 (Tipo)(Página no powerpoint)
