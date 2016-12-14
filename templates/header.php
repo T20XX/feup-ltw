@@ -38,22 +38,47 @@
 					<li><input id="go_information" class="header_button button" action="information.php" type="submit" value="Information" /></li>
 					<?php
 					/*Session Started*/
-					if (isset($_SESSION['id_account'])){
-						
-						/*Owner ?*/
-						if($_SESSION['type'] == 'owner')
-								echo '<li><input id="go_my_restaurants" class="header_button button" action="my_restaurants.php" type="submit" value="My Restaurants" /></li>';
-						/*Reviewer?*/
-						else
-								echo '<li><input id="go_my_favorite" class="header_button button" action="my_favorite.php" type="submit" value="My Favorite" /></li>';
-						echo '<li><input id="go_my_account" class="header_button button" action="my_account.php" type="submit" value="' . $_SESSION['name'] .'" /></li>';
-						echo '<li><input id="do_logout" class="header_button button" action="action_logout.php" type="submit" value="Logout" /></li>';
+					if(isset($_SESSION['tries']))
+					{	}
+					else
+						$_SESSION['tries']=0;
 					
-					}
-					else{
-						echo '<li><input id="do_login" class="header_button button" type="submit" value="Login" /></li>';
-						echo '<li><input id="do_signup" class="header_button button" action="signup.php" type="submit" value="SignUp" /></li>';		
-					}
+						if (isset($_SESSION['id_account'])){		
+							/*Owner ?*/
+							if($_SESSION['type'] == 'owner')
+									echo '<li><input id="go_my_restaurants" class="header_button button" action="my_restaurants.php" type="submit" value="My Restaurants" /></li>';
+							/*Reviewer?*/
+							else
+									echo '<li><input id="go_my_favorite" class="header_button button" action="my_favorite.php" type="submit" value="My Favorite" /></li>';
+							echo '<li><input id="go_my_account" class="header_button button" action="my_account.php" type="submit" value="' . $_SESSION['name'] .'" /></li>';
+							echo '<li><input id="do_logout" class="header_button button" action="action_logout.php" type="submit" value="Logout" /></li>';
+						
+						}
+						else{
+							if($_SESSION['tries']<3 )
+								echo '<li><input id="do_login" class="header_button button" type="submit" value="Login" /></li>';
+							else if(isset($_SESSION['timeout']))
+							{
+								$endtime = time();
+								
+								if($endtime - $_SESSION['timeout'] >= 30)
+								{
+									$_SESSION['tries']=0;
+									echo '<li><input id="do_login" class="header_button button" type="submit" value="Login" /></li>';
+								}
+								else
+								{
+									echo '<li><input id="do_lockout" class="header_button button" action="lockout.php" type="submit" value="Login" /></li>';
+								}
+								
+							}
+							else
+							{
+								echo '<li><input id="do_lockout" class="header_button button" action="lockout.php" type="submit" value="Login" /></li>';
+								$_SESSION['timeout'] = time();
+							}
+								echo '<li><input id="do_signup" class="header_button button" action="signup.php" type="submit" value="SignUp" /></li>';		
+						}						
 					?>
 				</ul>
 			</div>
