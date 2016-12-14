@@ -18,7 +18,7 @@
 						<input type="text" class="max_width" name="username" required="required" value=<?php echo $_SESSION['id_account'] ?>>
 					</label></p> -->
 					<p><label>Name: 
-						<input type="text" class="max_width"name="name" required="required" value=<?php echo $_SESSION['name'] ?>>
+						<input type="text" class="max_width"name="name" required="required" value="<?php echo $_SESSION['name'] ?>">
 					</label></p>
 					<!-- <p><label>Password: 
 						<input type="password" class="max_width"name="password" required="required">
