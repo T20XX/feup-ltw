@@ -26,7 +26,7 @@
 					For Restaurant management
 					*/
 						
-					if($result['id_owner'] == $_SESSION['id_account']){
+					if(isset($_SESSION['id_account']) && $result['id_owner'] == $_SESSION['id_account']){
 				?>
 						<form action="edit_restaurant.php" method="post">
 							<?php echo '<input type="hidden" name="id" value=' . $_GET['id'] . '>' ?>
@@ -119,11 +119,13 @@
 				<?php
 				/*
 					To know if the reviewer already left a review (just once)
-				*/		
-				$reviewByUserToRestaurant = getReviewByUserToRestarurant($db,$_GET['id'], $_SESSION['id_account']);
-				if($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL){
-						include('review_form.php');
-					}
+				*/
+                if(isset($_SESSION['id_account'])){
+                    $reviewByUserToRestaurant = getReviewByUserToRestarurant($db, $_GET['id'], $_SESSION['id_account']);
+                    if ($_SESSION['type'] == "reviewer" && $reviewByUserToRestaurant == NULL) {
+                        include('review_form.php');
+                    }
+                }
 				?>
 			
 			<!-- All Comments -->

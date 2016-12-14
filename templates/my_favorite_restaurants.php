@@ -1,3 +1,4 @@
+<?php  if(isset($_SESSION['id_account'])){ ?>
 <div id="content">
 	<h1 class="title"> My Favorite </h1>
 	<div class = "display_big_center">
@@ -10,3 +11,4 @@
 	?>
 	</div>
 </div>
+    <?php  } ?>

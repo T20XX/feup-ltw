@@ -9,7 +9,9 @@
 			<!-- Security -->
 			
 				<?php
-				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+                if(isset($_SESSION['csrf_token'])) {
+                    echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+                }
 				?>
 			
 			<!-- Name or Price or Minimum Stars -->

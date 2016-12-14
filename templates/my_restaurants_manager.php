@@ -1,3 +1,4 @@
+<?php  if(isset($_SESSION['id_account'])){ ?>
 <div id="content">
 
 	<h1 class="title"> My Restaurants </h1>
@@ -13,3 +14,4 @@
 	</div>
 	
 </div>
+    <?php  } ?>
