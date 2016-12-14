@@ -6,6 +6,12 @@ $result = getRestaurantItem($db, array($_POST['id']));
 		<h1> Edit Restaurant </h1>
 		<div>
 			<form action="action_edit_restaurant.php" class="big_form" method="post" enctype="multipart/form-data">
+			
+			<!-- Security --> 
+			
+				<?php
+				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+				?>
                 
 			<!-- To prevent $_GET information to pass from php to php -->
 				

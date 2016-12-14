@@ -6,8 +6,13 @@
 			
 			<form action="action_add_restaurant.php" class="big_form" method="post" enctype="multipart/form-data" > <!-- onsubmit="return mySubmitFunction()"> -->
 			
-			<!-- Name, Address (with geocode API), average price and description -->
+			<!-- Security -->
 			
+				<?php
+				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+				?>
+			
+			<!-- Name, Address (with geocode API), average price and description -->
 			
 				<fieldset>
 					<legend>General Information</legend>

@@ -12,6 +12,13 @@
 		$_SESSION['type'] = $result['type'];
 		$_SESSION['age'] = $result['age'];
 		$_SESSION['gender'] = $result['gender'];
+		
+		/*
+		Security - generate random token
+		*/
+		if (!isset($_SESSION['csrf_token'])) {
+		  $_SESSION['csrf_token'] = md5(uniqid($_SESSION['id_account'], true));
+		}
 	}else{
 		echo "The user doesn't exist or the password entered is wrong";
 	}

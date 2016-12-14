@@ -1,4 +1,11 @@
 <form action="action_add_review.php" class = "big_form" method="post">
+
+	<!-- Security -->
+	
+	<?php
+		echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+	?>
+	
 	<fieldset>
 		<legend> Add Review </legend>
 		

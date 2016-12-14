@@ -18,6 +18,16 @@
 	<div>
 		<input id="button_edit_account" action="edit_account.php" class="button_1 button" value="Edit Account"/>
 		<input id="button_change_password" action="change_password.php" class="button_1 button" value="Change Password"/>
-		<input id="button_delete_account" action="action_delete_account.php" class="button_1 button" value="Delete Account"/>
+		
+	<!-- Security -->
+	
+		<form action="action_delete_account.php">
+		  <!-- Security -->
+			<?php
+				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+				?>
+		  <input type="submit" class="button_1 button" value="Delete Account"/>
+		</form>
+		
 	</div>
 </div>
