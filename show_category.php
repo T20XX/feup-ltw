@@ -3,12 +3,25 @@
   include_once('database/connection.php');
   include_once('database/restaurant.php');
   include_once('database/restaurant_food.php');
+  include_once('database/search.php');
   include ('templates/header.php');
   ?>
 
   	<div id="content">
 		<?php
 		$restaurants=getAllRestaurant($db);
+		
+		/*Security - Check if category exists*/
+		$categories=getAllCategories($db);
+		$found = 0;
+		foreach($categories as $category){
+			
+			if($category[0] == $_GET['category'])
+				$found = 1;
+		}
+		
+		if($found == 0)
+			header('Location: error.php');
 		
 		echo '<h1 id="title"> Category - ' . $_GET['category'] . '</h1>';
 		echo '<div class="display_big_center">';
@@ -22,6 +35,7 @@
 			}
 				
 		}
+			
 		echo '</div>';
 		?>
 	</div>

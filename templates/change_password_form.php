@@ -2,6 +2,13 @@
 		<h1> Change Password </h1>
 		
 			<form action="action_change_password.php" name="changePasswordForm" class = "big_form" method="post" onSubmit="return validatePassword()">
+			
+			<!-- Security -->
+				
+				<?php
+				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+				?>
+				
 					<h3> <?php echo $_SESSION['id_account'] ?> </h3>
 					<p><label>Current Password: 
 						<input type="password" class="max_width" name="current_password" required="required">

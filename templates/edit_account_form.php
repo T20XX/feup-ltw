@@ -3,6 +3,12 @@
 		
 			<form action="action_edit_account.php" class = "big_form" method="post">
 			
+			<!-- Security -->
+			
+				<?php
+				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+				?>
+			
 			<!-- Name, Age, Gender -->
 			
 				<fieldset>

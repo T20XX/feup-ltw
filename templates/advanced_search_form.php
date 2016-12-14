@@ -6,6 +6,12 @@
 		
 			<form class="big_form" action="action_search_restaurant.php" method="post">
 			
+			<!-- Security -->
+			
+				<?php
+				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
+				?>
+			
 			<!-- Name or Price or Minimum Stars -->
 			
 				<fieldset>

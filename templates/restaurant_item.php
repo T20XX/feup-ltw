@@ -148,20 +148,8 @@
 					If review or the restaurant belongs to the account, then it can leaves a reply
 					*/
 					if($_SESSION['id_account'] == $result['id_owner'] || $_SESSION['id_account'] == $review['id_reviewer']){ ?>
-						<input class="button_1 button button_do_reply" type="submit" value="Reply" >
-						<form id="reply" action="action_add_reply.php" class = "big_form" method="post">
-							<fieldset>
-								<legend> Reply </legend>
-								
-								<?php 
-									echo '<input type="hidden" name="id_restaurant" value="' . $review['id_restaurant'] . '">';
-									echo '<input type="hidden" name="id_review" value="' . $review['id_review'] . '">';
-								?>
-								<textArea type="text" class="max_width small_textArea" name="comment"></textArea>
-								<input class="button_1 button" type="submit" value="Send" >
-							</fieldset>
-						</form>
-					<?php
+						<?php
+						include('reply_form.php');
 					}						
 					
 				echo '</div>';
