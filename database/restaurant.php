@@ -60,7 +60,6 @@
 
 function editRestaurant($db, $id, $name,  $address, $description, $avg_price,$open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday){
     $stmt = $db->prepare('UPDATE Restaurant SET
-      id_category = ?,
       name = ?,
       address = ?,
       avg_price = ?,
@@ -75,7 +74,7 @@ function editRestaurant($db, $id, $name,  $address, $description, $avg_price,$op
       saturday = ?,
       sunday = ?
       WHERE id_restaurant = ?');
-    $stmt->execute(array(NULL, $name, $address, $avg_price, $description,  $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $id));
+    $stmt->execute(array($name, $address, $avg_price, $description,  $open_time, $close_time, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday, $id));
 }
 	
 	function addCategoriesRestaurant($db,$name,$owner,$categories){
