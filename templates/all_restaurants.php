@@ -7,7 +7,7 @@
 			($db);
 			
 			foreach( $result as $row) {
-				echo '<a class="item" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
+				echo '<a href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
 			 }
 		?>
 	</div>

@@ -27,7 +27,7 @@
 			if($_POST['restaurant_name'] == "")
 				$restaurant_name = '%';
 			else
-				$restaurant_name = $_POST['restaurant_name'];
+				$restaurant_name = '%' . $_POST['restaurant_name'] . '%';
 			
 			if($_POST['address_name']=="")
 				$address = '%';
