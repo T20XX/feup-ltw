@@ -61,7 +61,6 @@ $(document).click(function(e) {
     }
 
     if (e.target.id != 'livesearch' && e.target.id != 'search') {
-	    console.log("top");
             $("#livesearch").css("display", "none");
     }
 
