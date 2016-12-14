@@ -9,6 +9,6 @@
 - Path Traversal Attack - 8
 - Account Lockout - 18
 - Cross-site Scripting - 21
-- Cross-site Request Forgery - 34
 - Session Fixation - 62
 - Sessions in PHP ? - 68
+- outros
