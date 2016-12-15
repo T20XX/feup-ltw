@@ -9,7 +9,7 @@
 	
 		<fieldset>
 			<legend> Reply </legend>
-			
+			<p> Note: For security purposes, only numbers, letters and simple punctuation such as '.' ',' '!' '_' '?' are allowed </p>
 			<?php 
 				echo '<input type="hidden" name="id_restaurant" value="' . $review['id_restaurant'] . '">';
 				echo '<input type="hidden" name="id_review" value="' . $review['id_review'] . '">';
