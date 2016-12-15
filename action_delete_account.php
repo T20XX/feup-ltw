@@ -2,7 +2,7 @@
 	include_once('database/connection.php');
 	include_once('database/account.php');
 	include_once('database/restaurant.php');
-	include ('templates/session_start.php');
+	session_start();
 	
 	/*Security*/
   
