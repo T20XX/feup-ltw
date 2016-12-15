@@ -18,7 +18,7 @@
 			echo '<div class="display_big_center">';
 				$result=getRestaurantDay($db,$_GET['day']);
 				foreach($result as $row)
-					echo '<a class="item" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
+					echo '<a href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
 			echo '</div>';
 		}
 		?>

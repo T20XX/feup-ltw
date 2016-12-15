@@ -50,6 +50,18 @@
 				$end='24:00';
 			else
 				$end=$_POST['end_time'];
+			
+			if(!isset($_POST['days'])) {
+				$weekdays = [];
+			}
+			else
+				$weekdays = $_POST['days'];
+			
+			if(!isset($_POST['categories'])) {
+				$cat = [];
+			}
+			else
+				$cat = $_POST['categories'];
 				
 				$stmt = $db->prepare('SELECT * FROM Restaurant WHERE name LIKE ? AND address LIKE ? AND avg_price <= ? AND stars >= ?');
 				$stmt->execute(array($restaurant_name, $address, $avg, $stars));
@@ -58,7 +70,7 @@
 				
 					foreach( $result as $row) {
 						$show=1;
-							foreach($_POST['days'] as $days)
+							foreach($weekdays as $days)
 							{
 								if($row[$days]==0)
 									$show = 0;
@@ -66,10 +78,8 @@
 							
 							$allcategories = findRestaurantFood($db,$row['id_restaurant']);		
 							
-
-							
 								
-							foreach($_POST['categories'] as $category)
+							foreach($cat as $category)
 							{
 								$inarray=0;
 								foreach($allcategories as $temp)
@@ -83,7 +93,7 @@
 
 							}					
 						if($row['open_time'] >= $start && $row['close_time'] <= $end && $show==1)
-						echo '<a class="item" href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
+						echo '<a href="restaurant_item.php?id=' . $row['id_restaurant'] . '">' . $row['name']  .  '</a>';
 					 }
 				
 					?>
