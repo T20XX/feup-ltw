@@ -108,6 +108,26 @@ $(window).load(function(){
             scrollTop: 0
         }, 700);
     });
+
+    $('form').on('submit', function(e) {
+        e.preventDefault();
+        var textareaList = document.getElementsByTagName("textarea");
+        var regex = /^[0-9a-zA-Z ]*$/;
+        for(var i=0;i<textareaList.length;i++){
+            var val = textareaList[i].value;
+            var lines = val.split('\n');
+
+            for(var i = 0; i < lines.length; i++)
+            {
+                if(!lines[i].match(regex))
+                {
+                    window.alert ('Invalid input: ' + lines[i]);
+                    return false;
+                }
+            }
+        }
+        this.submit(); //now submit the form
+    });
 });
 
 /*
