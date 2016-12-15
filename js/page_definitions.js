@@ -8,9 +8,9 @@ $(function() {
        $("#search_bar").focusin(function() {
            $("#livesearch").css("display", "block");
        });
-       $("#search_bar").focusout(function() {
-           $("#livesearch").css("display", "none");
-       });
+       //$("#search_bar").focusout(function() {
+       //    //$("#livesearch").css("display", "none");
+       //});
 	});
 });
 
@@ -60,9 +60,14 @@ $(document).click(function(e) {
 		});
     }
 
+    if (e.target.id != 'livesearch' && e.target.id != 'search') {
+            $("#livesearch").css("display", "none");
+    }
+
     if(e.target.id == 'photo'){
         $(".slideshow").slideDown(1000).fadeIn(1000);
         $(".slideshow").css("display", "block");
+        showSlides(slideIndex);
     }
     else if (e.target.id != 'photo' && e.target.id != 'slideshow_content') {
         $(".slideshow").slideUp(1000).fadeOut(1000);
@@ -103,7 +108,6 @@ $(window).load(function(){
             scrollTop: 0
         }, 700);
     });
-    showSlides(slideIndex);
 });
 
 /*
