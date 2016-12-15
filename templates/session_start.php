@@ -1,7 +1,11 @@
 <?php
 	session_set_cookie_params(0 , '/' , '.' , true, true);
 	session_start();
-	
+//$old_sessionid = session_id();
+session_regenerate_id();
+//$new_sessionid = session_id();
+//echo "Old Session: $old_sessionid<br />";
+//echo "New Session: $new_sessionid<br />";
 	/*
 	Security
 	*/
@@ -12,5 +16,4 @@
         }
 		}
 
-//session_regenerate_id(true);
 ?>
