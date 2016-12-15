@@ -6,7 +6,7 @@
 	
 	/*Security*/
 	
-		if ($_SESSION['csrf_token'] != $_POST['csrf']) {
+		if (isset($_SESSION['id_account']) && $_SESSION['csrf_token'] != $_POST['csrf']) {
 			header('Location: error.php');
 		}
 		else{
