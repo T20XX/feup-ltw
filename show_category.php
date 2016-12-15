@@ -31,7 +31,7 @@
 			$result=getAllCategoriesFromRestaurant($db,$restaurant['id_restaurant']);
 			if(in_array($_GET['category'],$result))
 			{
-				echo '<a class="item" href="restaurant_item.php?id=' . $restaurant['id_restaurant'] . '">' . $restaurant['name']  .  '</a>';
+				echo '<a href="restaurant_item.php?id=' . $restaurant['id_restaurant'] . '">' . $restaurant['name']  .  '</a>';
 			}
 				
 		}
