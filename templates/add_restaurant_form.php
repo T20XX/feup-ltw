@@ -16,8 +16,10 @@
 			
 				<fieldset>
 					<legend>General Information</legend>
+					<p> Note: For security purposes, only numbers, letters and simple punctuation such as '.' ',' '!' '_' '?' are allowed </p>
+					
 					<p><label>Name: 
-						<input type="text" class="max_width" name="name" required="required">
+						<input type="text" class="max_width" name="name" pattern="[A-Za-z0-9 _.,!?/$]*" required="required">
 					</label></p>
 					<p><label>Address: 
 						<input id="pac-input" class="max_width" type="text" name="address" placeholder="Enter a location" required="required">

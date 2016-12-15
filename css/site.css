@@ -124,6 +124,7 @@ body {
 .small_textArea{
 	resize: none;
 	height:70px;
+	text-align: left;
 }
 
 fieldset >*{

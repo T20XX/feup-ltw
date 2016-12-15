@@ -18,8 +18,10 @@
 			
 				<fieldset>
 					<legend> General Information </legend>
+					
+					<p> Note: For security purposes, only numbers, letters and simple punctuation such as '.' ',' '!' '_' '?' are allowed </p>
 					<p><label>Restaurant Name: 
-						<input type="text" class="max_width" name="restaurant_name" value="">
+						<input type="text" class="max_width" name="restaurant_name" pattern="[A-Za-z0-9 _.,!?/$]*" value="">
 					</label></p>
 					<p><label>Average Price: </label></p>
 					<input type="number" value="10" min="1" max="200" step="1" name="avg_price">

@@ -8,16 +8,17 @@
 				<?php
 				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
 				?>
+					<p> Note: For security purposes, only numbers, letters and simple punctuation such as '.' ',' '!' '_' '?' are allowed </p>
 				
 					<h3> <?php echo $_SESSION['id_account'] ?> </h3>
 					<p><label>Current Password: 
 						<input type="password" class="max_width" name="current_password" required="required">
 					</label></p>
 					<p><label>New Password: 
-						<input type="password" class="max_width" name="new_password_1" required="required">
+						<input type="password" class="max_width" name="new_password_1" pattern="[A-Za-z0-9 _.,!?/$]*" required="required">
 					</label></p>
 					<p><label>Confirm New Password: 
-						<input type="password" class="max_width" name="new_password_2" required="required">
+						<input type="password" class="max_width" name="new_password_2" pattern="[A-Za-z0-9 _.,!?/$]*" required="required">
 					</label></p>
 				<input class="button_1 button" type="submit" value="Change Password">
 			</form>

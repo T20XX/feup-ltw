@@ -8,14 +8,16 @@
 			
 				<fieldset>
 					<legend>Account Information</legend>
+					
+					<p> Note: For security purposes, only numbers, letters and simple punctuation such as '.' ',' '!' '_' '?' are allowed </p>
 					<p><label>Username: 
-						<input type="text" class="max_width" name="username" required="required">
+						<input type="text" class="max_width" name="username" pattern="[A-Za-z0-9 _.,!?/$]*" required="required">
 					</label></p>
 					<p><label>Name: 
-						<input type="text" class="max_width" name="name" required="required">
+						<input type="text" class="max_width" name="name" pattern="[A-Za-z0-9 _.,!?/$]*" required="required">
 					</label></p>
 					<p><label>Password: 
-						<input type="password" class="max_width" name="password" required="required">
+						<input type="password" class="max_width" name="password" pattern="[A-Za-z0-9 _.,!?/$]*" required="required">
 					</label></p>
 					<p><label>Age: 
 						<input type="number" name="age" value="25" min="18" max="90" step="1">
