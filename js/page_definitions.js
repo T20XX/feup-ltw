@@ -112,7 +112,7 @@ $(window).load(function(){
     $('form').on('submit', function(e) {
         e.preventDefault();
         var textareaList = document.getElementsByTagName("textarea");
-        var regex = /^[0-9a-zA-Z ]*$/;
+        var regex = /^[0-9a-zA-Z., ]*$/;
         for(var i=0;i<textareaList.length;i++){
             var val = textareaList[i].value;
             var lines = val.split('\n');
