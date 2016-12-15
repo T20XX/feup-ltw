@@ -24,7 +24,7 @@
 						<input type="text" class="max_width" name="restaurant_name" pattern="[A-Za-z0-9 _.,!?/$]*" value="">
 					</label></p>
 					<p><label>Average Price: </label></p>
-					<input type="number" value="1" min="1" max="200" step="1" name="avg_price">
+					<input type="number" value="" min="1" max="200" step="1" name="avg_price">
 					<p><label>Address: 
 						<input type="text" class="max_width" name="address_name" value="">
 					<p><label></p>
