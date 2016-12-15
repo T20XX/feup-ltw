@@ -23,6 +23,7 @@
 			<input type="radio" name="score" value="5">
 		</div>
 		<p><label>Comment: 
+			<p> Note: For security purposes, only numbers, letters and simple punctuation such as '.' ',' '!' '_' '?' are allowed </p>
 			<textArea type="text" class="max_width small_textArea" name="comment"></textArea>
 		</label></p>
 		<input class="button_1 button" type="submit" value="Add Review">
