@@ -2,11 +2,11 @@
 	include_once('database/connection.php');
 	include_once('database/account.php');
 	include_once('database/restaurant.php');
-	session_start();
+	include ('templates/session_start.php');
 	
 	/*Security*/
   
-	if ($_SESSION['csrf_token'] !== $_POST['csrf']) {
+	if ($_SESSION['csrf_token'] != $_POST['csrf']) {
 		header('Location: error.php');
 	}
 	else{

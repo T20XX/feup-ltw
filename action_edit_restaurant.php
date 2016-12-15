@@ -6,7 +6,7 @@ include_once('database/restaurant.php');
 
 	/*Security*/
 	
-		if ($_SESSION['csrf_token'] !== $_POST['csrf']) {
+		if ($_SESSION['csrf_token'] != $_POST['csrf']) {
 			header('Location: error.php');
 		}
 		else{

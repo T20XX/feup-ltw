@@ -22,11 +22,11 @@
 		
 	<!-- Security -->
 	
-		<form action="action_delete_account.php">
+		<form action="action_delete_account.php" method="post">
 		  <!-- Security -->
 			<?php
 				echo '<input type="hidden" name="csrf" value="' . $_SESSION['csrf_token'] . '">';
-				?>
+			?>
 		  <input type="submit" class="button_1 button" value="Delete Account"/>
 		</form>
 		
